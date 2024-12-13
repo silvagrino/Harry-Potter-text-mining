@@ -226,15 +226,15 @@ Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta sag
 
 
 
-  Construcción de grafos basados en la co-ocurrencia de palabras clave.??
+ 
 
 
 ### asociaciones de palabras 
 
 Las palabras mas repetidas de la saga y sus asociaciones.
 ```
-  findAssocs(tdm_8, terms = c("harry", "ron", "dumbledore", "hermione", "hagrid", "snape", "voldemort", "malfoy", "potter", "varita"), corlimit = .30)
-```
+  findAssocs(tdm_8, terms = c("magia", "hogwarts", "harry", "ron", "dumbledore", "hermione", "hagrid", "snape", "voldemort", "malfoy", "potter", "varita"), corlimit = .20) 
+  ```
 
 ##  Minería de Texto Avanzada
 
@@ -351,10 +351,26 @@ El paquete syuzhet incluye el lexicón NRC, que evalúa 8 emociones (alegría, t
 
 ![](imagenes/polaridadporlibro.png)
 
-### Como se puede ver la progresion de los libros hacia tematicas mas oscuras y negativas. [ big chiet]
+### Como se puede ver la progresion de los libros hacia tematicas mas oscuras y negativas. [big chiet]
 
 
 
+
+  # Grafico de pizza por personaje con porcentajes 
+
+### grafico de pizza emociones por personaje
+
+```
+ ggplot(datos_harry, aes(x = "", y = Frecuencia, fill = Emocion)) +
+    geom_bar(stat = "identity", width = 1, color = "white") +
+    coord_polar(theta = "y") +
+    scale_fill_manual(values = colores_emociones) +
+    geom_text(aes(label = paste0(Porcentaje, "%")), 
+              position = position_stack(vjust = 0.5),  # Centrar etiquetas en los segmentos
+              size = 3) +  # Tamaño de las etiquetas
+    ggtitle("Distribución de emociones para Harry") +
+    theme_void()
+```
 
 ###################################################################
 
