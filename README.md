@@ -180,9 +180,13 @@ Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta sag
 
 ## Nube de palabras para libro 1 y 3
 1
-![](imagenes/nubedepalabras1.png)
+
+![](imagenes/nubepalabras1.png)
+
+
 3
-![](imagenes/nubedepalabras3.png)
+
+![](imagenes/nubepalabras3.png)
 
 
 
