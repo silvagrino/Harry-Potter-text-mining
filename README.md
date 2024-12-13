@@ -168,13 +168,12 @@ Con la frecuencia de terminos para toda la saga puedo analizar cada libro
             colors = brewer.pal(name = "Dark2", n = 8))
 ```
 
-![](imagenes/nubedepalabrassaga.png)
 
-<img src="imagenes/nubedepalabrassaga.png" alt="Descripción de la imagen" width="450">
+<img src="imagenes/nubedepalabrassaga.png" alt="Descripción de la imagen" width="550">
 
 Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta saga junto con los demas personajes presentes en toda la saga.
 
-## Nube de palabras para cada libro
+## Nube de palabras para libro 1 y 3
 
 
 
@@ -184,19 +183,21 @@ Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta sag
 
 ## Graficas de frecuencia
   
-  # NUMERO DE USOS. Solo cambiar el numero en corpus_filtrado_ordenado_X
+# NUMERO DE USOS. Solo cambiar el numero en corpus_filtrado_ordenado_X
+
 
 ```
-  corpus_filtrado_ordenado8[1:10, ] %>%
+  corpus_filtrado_ordenado2[1:13, ] %>%
     ggplot(aes(palabra, frec)) +
     geom_bar(stat = "identity", color = "black", fill = "#87CEFA") +                       
     geom_text(aes(hjust = 1.3, label = frec)) + 
     coord_flip() + 
-    labs(title = "Diez palabras más frecuentes",  x = "Palabras", y = "Número de usos")
+    labs(title = "Trece palabras más frecuentes",  x = "Palabras", y = "Número de usos")
 ```  
+
 ![](imagenes/Diezpalabrasmásfrecuentes.png)
 
-
+# 2 y 4
 
 
 
@@ -206,20 +207,19 @@ Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta sag
 
 ### Porcentaje de uso saga
 ```
-  corpus_filtrado_ordenado8 %>%
+  corpus_filtrado_ordenado5 %>%
     mutate(perc = (frec/sum(frec))*100) %>%
-    .[1:10, ] %>%
+    .[1:13, ] %>%
     ggplot(aes(palabra, perc)) +
     geom_bar(stat = "identity", color = "black", fill = "#87CEFA") +                   
     geom_text(aes(hjust = 1.3, label = round(perc, 2))) + 
     coord_flip() +
-    labs(title = "Diez palabras más frecuentes", x = "Palabras", y = "Porcentaje de uso")
+    labs(title = "Trece palabras más frecuentes", x = "Palabras", y = "Porcentaje de uso")
 ```
 
 ![](imagenes/Porcentajedeuso.png)
 
-###### HACERLO POR LIBRO? SOLO ALGUNOS? ##################################################################################################
-
+###### libro 5 y 7
 
 
 
@@ -237,6 +237,9 @@ Las palabras mas repetidas de la saga y sus asociaciones.
 ```
   findAssocs(tdm_8, terms = c("magia", "hogwarts", "harry", "ron", "dumbledore", "hermione", "hagrid", "snape", "voldemort", "malfoy", "potter", "varita"), corlimit = .20) 
   ```
+
+![](imagenes/asociaciones020.png)
+
 
 ##  Minería de Texto Avanzada
 
@@ -275,22 +278,19 @@ Las palabras mas repetidas de la saga y sus asociaciones.
     )
   })
   
-  # Visualizar para un libro
+  # Visualizar para un libro (3)
   serVis(datos_vis[[3]], open.browser = TRUE)
   
 ```
 
 ###### VISUALIZACION EN GIF
-#####  que voy a mostrar? qe conclusiones?
+
+
+libro 5 6 7
 
 
 
 
-# ASOCIACIONES ENTRE palabras. Cambiar palabras  #####################################################
-  
-findAssocs(tdm_8, terms = c("harry"), corlimit = .15) 
-  
-# A QUE PALABRAS APLICARLO?? ############ DEBO EVALUARLO DESPUES DE CORRER EL LDA PARA TODOS LOS LIBROS, QUIZA HAGA SENTIDO 
 # ANALIZAR CORRELACIONES DE PALABRAS CLAVES.
 
 
@@ -323,23 +323,22 @@ El paquete syuzhet incluye el lexicón NRC, que evalúa 8 emociones (alegría, t
   
   # Plot Barra de columnas
   
-  barplot(colSums(resultados_emociones[[1]]), las = 2, col = rainbow(10),
-          main = "Distribución de emociones en el libro 1")
-  
-  barplot(colSums(resultados_emociones[[4]]), las = 2, col = rainbow(10),
-          main = "Distribución de emociones en el libro 4")
-  
-  barplot(colSums(resultados_emociones[[7]]), las = 2, col = rainbow(10),
-          main = "Distribución de emociones en el libro 7")
-  
+```
   barplot(colSums(resultados_emociones[[8]]), las = 2, col = rainbow(10),
           main = "Distribución de emociones en la saga")
+```
+######  incluir porcentajes ################################################
 
 ![](imagenes/comparacionemociones4.png)
-
+![](imagenes/comparacionemociones6.png)
 ![](imagenes/comparacionemocionesentrelibros.png)
+ 
 
- # Analisis de la polaridad. Comparacion entre libros:
+
+###### incluir porcentajes ##########################
+
+
+### Analisis de la polaridad. Comparacion entre libros:
   
   polaridad <- sapply(resultados_emociones, function(emociones) {
     sum(emociones$positive) - sum(emociones$negative)
@@ -353,8 +352,12 @@ El paquete syuzhet incluye el lexicón NRC, que evalúa 8 emociones (alegría, t
 
 ![](imagenes/polaridadporlibro.png)
 
+
+
 ### Como se puede ver la progresion de los libros hacia tematicas mas oscuras y negativas. [big chiet]
 
+
+4to libro la primera muerte de un personaje. 
 
 
 
@@ -376,11 +379,10 @@ El paquete syuzhet incluye el lexicón NRC, que evalúa 8 emociones (alegría, t
 
 
 ![](imagenes/emocionesharry.png)
-![](imagenes/emocionesron.png)
+
 ![](imagenes/emocionessumbledore.png)
+
 ![](imagenes/emocionesvoldemort.png)
-![](imagenes/emocionessnape.png)
-![](imagenes/emocioneshermione.png)
 
 
 ###################################################################
