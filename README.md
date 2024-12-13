@@ -170,6 +170,8 @@ Con la frecuencia de terminos para toda la saga puedo analizar cada libro
 
 ![](imagenes/nubedepalabrassaga.png)
 
+<img src="imagenes/nubedepalabrassaga.png" alt="Descripción de la imagen" width="450">
+
 Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta saga junto con los demas personajes presentes en toda la saga.
 
 ## Nube de palabras para cada libro
@@ -371,6 +373,15 @@ El paquete syuzhet incluye el lexicón NRC, que evalúa 8 emociones (alegría, t
     ggtitle("Distribución de emociones para Harry") +
     theme_void()
 ```
+
+
+![](imagenes/emocionesharry.png)
+![](imagenes/emocionesron.png)
+![](imagenes/emocionessumbledore.png)
+![](imagenes/emocionesvoldemort.png)
+![](imagenes/emocionessnape.png)
+![](imagenes/emocioneshermione.png)
+
 
 ###################################################################
 
