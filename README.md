@@ -69,13 +69,14 @@ conteo_palabras <- sapply(librostext, function(libro) {
 names(conteo_palabras) <- paste("Libro", 1:length(texto_libros))
 print(conteo_palabras)
 ```
-Harry Potter y la piedra filosofal: 781.865 palabras.
-Harry Potter y la cámara secreta: 91.422 palabras.
-Harry Potter y el prisionero de Azkaban: 110.080 palabras.
-Harry Potter y el cáliz de fuego: 199.881 palabras.
-Harry Potter y la Orden del Fénix: 278.698 palabras.
-Harry Potter y el misterio del príncipe: 175.260 palabras.
-Harry Potter y las reliquias de la muerte: 208.902 palabras.
+
+1. Harry Potter y la piedra filosofal: 781.865 palabras.
+2. Harry Potter y la cámara secreta: 91.422 palabras.
+3. Harry Potter y el prisionero de Azkaban: 110.080 palabras.
+4. Harry Potter y el cáliz de fuego: 199.881 palabras.
+5. Harry Potter y la Orden del Fénix: 278.698 palabras.
+6. Harry Potter y el misterio del príncipe: 175.260 palabras.
+7. Harry Potter y las reliquias de la muerte: 208.902 palabras.
 
 ### Para preparar los datos aplicaré un Enfoque ROCCC:
 
@@ -119,7 +120,7 @@ Empiezo a procesar los archivos incluyendolos a una lista de pdf, para luego ite
     corpus <- tm_map(corpus, content_transformer(function(x) gsub("preguntó", "", x)))
 ```
 Limpio ademas signos especiales y palabras tipicos de una narracion como esta, los cuales de seguro se repetiran mucho,
- no quiero que [---] misleading?) mi analisis
+ no quiero que genere informacion engañosa en mi analisis
 
 
 # 4. Analisis
@@ -158,6 +159,10 @@ Para ello creo un bucle para procesar cada archivo, asi no tendré que repetir e
 ```
 Con la frecuencia de terminos para toda la saga puedo analizar cada libro
 
+
+
+# Frecuencia de palabras
+
 ## Nube de palabas de la saga completa
   
 ```
@@ -171,11 +176,13 @@ Con la frecuencia de terminos para toda la saga puedo analizar cada libro
 
 <img src="imagenes/nubedepalabrassaga.png" alt="Descripción de la imagen" width="550">
 
-Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta saga junto con los demas personajes presentes en toda la saga.
+Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta saga junto con Ron y Hermione y los demas personajes presentes en toda la saga.
 
 ## Nube de palabras para libro 1 y 3
-
-
+1
+![](imagenes/nubedepalabras1.png)
+3
+![](imagenes/nubedepalabras3.png)
 
 
 
@@ -187,7 +194,7 @@ Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta sag
 
 
 ```
-  corpus_filtrado_ordenado2[1:13, ] %>%
+  corpus_filtrado_ordenado8[1:13, ] %>%
     ggplot(aes(palabra, frec)) +
     geom_bar(stat = "identity", color = "black", fill = "#87CEFA") +                       
     geom_text(aes(hjust = 1.3, label = frec)) + 
@@ -199,9 +206,9 @@ Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta sag
 
 # 2 y 4
 
+![](imagenes/palabrasmasfrecuentes2.png)
 
-
-
+![](imagenes/palabrasmasfrecuentes4.png)
 
 
 
@@ -222,8 +229,10 @@ Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta sag
 ###### libro 5 y 7
 
 
+![](imagenes/palabrasmasfrecuentes5por.png)
 
 
+![](imagenes/palabrasmasfrecuentes7por.png)
 
 
 
@@ -284,9 +293,13 @@ Las palabras mas repetidas de la saga y sus asociaciones.
 ```
 
 ###### VISUALIZACION EN GIF
-
+5
 ![](imagenes/gifLDA/LDAlibro5.gif)
+
+6
 ![](imagenes/gifLDA/LDAlibro6.gif)
+
+7
 ![](imagenes/gifLDA/LDAlibro7.gif)
 
 
