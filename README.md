@@ -285,9 +285,9 @@ Las palabras mas repetidas de la saga y sus asociaciones.
 
 ###### VISUALIZACION EN GIF
 
-
-libro 5 6 7
-
+![](imagenes/gif LDA/LDAlibro5.gif)
+![](imagenes/gif LDA/LDAlibro6.gif)
+![](imagenes/gif LDA/LDAlibro7.gif)
 
 
 
