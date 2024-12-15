@@ -180,12 +180,8 @@ Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta sag
 
 ## Nube de palabras para libro 1 y 3
 1
-
 ![](imagenes/nubepalabras1.png)
-
-
 3
-
 ![](imagenes/nubepalabras3.png)
 
 
@@ -350,6 +346,8 @@ El paquete syuzhet incluye el lexicón NRC, que evalúa 8 emociones (alegría, t
 ![](imagenes/comparacionemociones6.png)
 ![](imagenes/comparacionemocionesentrelibros.png)
  
+![](imagenes/comparacionemocionesbook.png)
+![](imagenes/polaridademocionallibro.png)
 
 
 ###### incluir porcentajes ##########################
@@ -371,14 +369,31 @@ El paquete syuzhet incluye el lexicón NRC, que evalúa 8 emociones (alegría, t
 
 
 
+
+## polaridad libros positiva/negativas
+
+```
+polaridad_libros <- data.frame(
+  Polaridad = c("Positiva", "Negativa"),
+  Frecuencia = colSums(do.call(cbind, lapply(resultados_emociones, function(em) em[, c("positive", "negative")]))),
+  Libro = rep(paste("Libro", 1:length(librostext)), each = 2)
+)
+
+ggplot(polaridad_libros, aes(x = Libro, y = Frecuencia, fill = Polaridad)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_fill_manual(values = c("steelblue", "tomato")) +
+  labs(title = "Polaridad emocional por libro",
+       x = "Libro",
+       y = "Frecuencia de polaridad") +
+  theme_minimal()
+```
 ### Como se puede ver la progresion de los libros hacia tematicas mas oscuras y negativas. [big chiet]
 
 
 4to libro la primera muerte de un personaje. 
 
 
-
-  # Grafico de pizza por personaje con porcentajes 
+# Grafico de pizza por personaje con porcentajes 
 
 ### grafico de pizza emociones por personaje
 
@@ -400,6 +415,8 @@ El paquete syuzhet incluye el lexicón NRC, que evalúa 8 emociones (alegría, t
 ![](imagenes/emocionessumbledore.png)
 
 ![](imagenes/emocionesvoldemort.png)
+
+![](imagenes/comparacionemocionesper.png)
 
 
 ###################################################################
