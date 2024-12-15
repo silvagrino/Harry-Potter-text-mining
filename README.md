@@ -161,9 +161,9 @@ Con la frecuencia de terminos para toda la saga puedo analizar cada libro
 
 
 
-# Frecuencia de palabras
+## Frecuencia de palabras
 
-## Nube de palabas de la saga completa
+### Nube de palabas de la saga completa
   
 ```
   wordcloud(words = corpus_filtrado_ordenado8$palabra, 
@@ -178,11 +178,13 @@ Con la frecuencia de terminos para toda la saga puedo analizar cada libro
 
 Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta saga junto con Ron y Hermione y los demas personajes presentes en toda la saga.
 
+############################################################################## palabras ############33
+
 ## Nube de palabras para libro 1 y 3
-1
-![](imagenes/nubepalabras1.png)
-3
-![](imagenes/nubepalabras3.png)
+
+
+
+![](imagenes/nubepalabras1.png)   ![](imagenes/nubepalabras3.png)
 
 
 
@@ -190,8 +192,7 @@ Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta sag
 
 ## Graficas de frecuencia
   
-# NUMERO DE USOS. Solo cambiar el numero en corpus_filtrado_ordenado_X
-
+# Numero de usos
 
 ```
   corpus_filtrado_ordenado8[1:13, ] %>%
@@ -202,17 +203,25 @@ Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta sag
     labs(title = "Trece palabras más frecuentes",  x = "Palabras", y = "Número de usos")
 ```  
 
-![](imagenes/Diezpalabrasmásfrecuentes.png)
+![](imagenes/palabrasfrecuentessaga.png)
 
-# 2 y 4
+### Libro 2 y 4
 
 ![](imagenes/palabrasmasfrecuentes2.png)
 
+Los 3 personajes principales son los que mas se repiten asi como en la mayoria de 
+las frecuuencias. En este segundo libro todavia se estan explorando personajes que 
+tendran una presencia permanente. Vemos la presencia de un personaje que solo aparece en esta entrega
+Lockhart. Conocer la casa de los Weasley. Voz. [ EDIT ]
+
+
 ![](imagenes/palabrasmasfrecuentes4.png)
 
+Moody nuevo personaje. El regreso de Voldemnort marcado por la aparicion de la palabra Señor
 
 
 ### Porcentaje de uso saga
+
 ```
   corpus_filtrado_ordenado5 %>%
     mutate(perc = (frec/sum(frec))*100) %>%
@@ -224,23 +233,26 @@ Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta sag
     labs(title = "Trece palabras más frecuentes", x = "Palabras", y = "Porcentaje de uso")
 ```
 
-![](imagenes/Porcentajedeuso.png)
 
-###### libro 5 y 7
+### Libros 5 y 7
 
 
 ![](imagenes/palabrasmasfrecuentes5por.png)
 
+Gran presencia de profesora Umbridge y Sirius
+Voz
+
 
 ![](imagenes/palabrasmasfrecuentes7por.png)
 
+El conflicto de las varitas tiene presencia en la septima entrega. voldemort
 
 
 
  
 
 
-### asociaciones de palabras 
+### Asociaciones de palabras 
 
 Las palabras mas repetidas de la saga y sus asociaciones.
 ```
@@ -249,12 +261,13 @@ Las palabras mas repetidas de la saga y sus asociaciones.
 
 ![](imagenes/asociaciones020.png)
 
+[ EDIT ]
 
-##  Minería de Texto Avanzada
 
-### Análisis de Redes Semánticas:
 
-  ### Modelado de Tópicos:
+## Análisis de Redes Semánticas
+
+  ### Modelado de Tópicos
   
  Para este modelado de topicos hare uso de LDA (Latent Dirichlet Allocation) para identificar temas latentes.
 
@@ -292,14 +305,17 @@ Las palabras mas repetidas de la saga y sus asociaciones.
   
 ```
 
-###### VISUALIZACION EN GIF
-5
+
+Harry Potter y la Orden del Fénix
+
 ![](imagenes/gifLDA/LDAlibro5.gif)
 
-6
+Harry Potter y el misterio del príncipe
+
 ![](imagenes/gifLDA/LDAlibro6.gif)
 
-7
+Harry Potter y las reliquias de la muerte
+
 ![](imagenes/gifLDA/LDAlibro7.gif)
 
 
@@ -308,9 +324,9 @@ Las palabras mas repetidas de la saga y sus asociaciones.
 
 
   
-# ANALISIS DE SENTIMIENTOS:
+## Analisis de sentimientos
 
-#### Personajes principales y emociones y polaridades asociadas.
+### Personajes principales, emociones y polaridades asociadas.
 
 
 ¿Qué puedes obtener de este análisis?
@@ -319,7 +335,7 @@ Tono general: Identificar si un libro es más positivo o negativo en términos e
 Evolución narrativa: Analizar cómo las emociones cambian a lo largo de la saga, reflejando el desarrollo de la trama.
 
   
-  # Evaluar emociones y polaridad en los textos.
+##  Evaluar emociones y polaridad en los textos.
   
  
   library(syuzhet)
@@ -343,27 +359,25 @@ El paquete syuzhet incluye el lexicón NRC, que evalúa 8 emociones (alegría, t
 ######  incluir porcentajes ################################################
 
 ![](imagenes/comparacionemociones4.png)
-![](imagenes/comparacionemociones6.png)
-![](imagenes/comparacionemocionesentrelibros.png)
+
+###### Cuantos libros mas individuales?
  
 ![](imagenes/comparacionemocionesbook.png)
-![](imagenes/polaridademocionallibro.png)
 
 
-###### incluir porcentajes ##########################
 
 
 ### Analisis de la polaridad. Comparacion entre libros:
-  
+  ```
   polaridad <- sapply(resultados_emociones, function(emociones) {
     sum(emociones$positive) - sum(emociones$negative)
   })
   
-  #plot:
-  
+  # Plot
+
   barplot(polaridad, names.arg = paste("Libro", 1:8), col = "blue",
           main = "Polaridad general por libro")
-  
+```
 
 ![](imagenes/polaridadporlibro.png)
 
@@ -387,15 +401,17 @@ ggplot(polaridad_libros, aes(x = Libro, y = Frecuencia, fill = Polaridad)) +
        y = "Frecuencia de polaridad") +
   theme_minimal()
 ```
+![](imagenes/polaridademocionallibro.png)
+
 ### Como se puede ver la progresion de los libros hacia tematicas mas oscuras y negativas. [big chiet]
 
 
 4to libro la primera muerte de un personaje. 
 
 
-# Grafico de pizza por personaje con porcentajes 
+## Emociones por personajes 
 
-### grafico de pizza emociones por personaje
+Grafico de pizza
 
 ```
  ggplot(datos_harry, aes(x = "", y = Frecuencia, fill = Emocion)) +
@@ -412,9 +428,12 @@ ggplot(polaridad_libros, aes(x = Libro, y = Frecuencia, fill = Polaridad)) +
 
 ![](imagenes/emocionesharry.png)
 
-![](imagenes/emocionessumbledore.png)
+![](imagenes/emocionesdumbledore.png)
 
 ![](imagenes/emocionesvoldemort.png)
+
+### Comparacion entre personajes principales
+
 
 ![](imagenes/comparacionemocionesper.png)
 
