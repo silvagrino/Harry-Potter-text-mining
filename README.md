@@ -3,7 +3,7 @@
 # 📚 Análisis de Texto de la Saga de Harry Potter 🧙‍♂️
 
 
-Tabla de Contenidos:
+## Tabla de Contenidos:
 
 [1. Preguntar](https://github.com/silvagrino/Harry-Potter-text-mining?tab=readme-ov-file#1-preguntar)
 
