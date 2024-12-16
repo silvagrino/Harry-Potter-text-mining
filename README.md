@@ -503,10 +503,42 @@ La consistencia de estas emociones refleja un patrón recurrente en la saga de H
 
 ![](imagenes/comparacionemocionesper.png)
 
+### Distribución General de Emociones
 
-###################################################################
+* Harry, Ron y Hermione (El Trío Protagonista)
+
+Harry muestra un equilibrio entre emociones positivas y negativas, con una proporción notable de fear y trust. Esto resalta la naturaleza de su papel como protagonista, enfrentando constantes amenazas pero manteniendo la confianza en su misión.
+
+A diferencia de otros personajes como Dumbledore o Harry, Hermione presenta una proporción más baja de "trust". Esto podría interpretarse como una representación de su carácter más crítico y racional, donde confía más en su conocimiento y habilidades personales que en los demás.
+
+Ron presenta un patrón similar al de Hermione, pero con una mayor representación de fear y negative, lo cual podría reflejar sus momentos de inseguridad y desafíos personales.
+
+* Dumbledore
+
+Trust y positive son las emociones predominantes en Dumbledore. Esto es coherente con su rol como líder sabio y mentor de los protagonistas, quien inspira confianza y esperanza incluso en los momentos más oscuros.
+
+* Snape
+
+Snape tiene una proporción más alta de trust y sadness.
+Tiene un papel ambiguo y oscuro en la historia.
+La emoción sadness puede estar relacionada con los aspectos trágicos de su vida, como su amor no correspondido y sacrificios personales.
+La presencia de trust es relevante, ya que finalmente se revela como un aliado crucial, a pesar de su apariencia hostil.
+
+* Voldemort
+
+Voldemort presenta una notable cantidad de fear, negative, y anger, lo cual es lógico considerando su rol como antagonista principal de la saga.
+La anger (ira) y negative (negatividad) dominan su espectro emocional, lo que refleja su naturaleza violenta y vengativa.
+La alta presencia de fear podría interpretarse no solo como el miedo que él causa, sino también como su propio temor a la muerte y a perder el poder.
+Tambien Voldemort es el personaje que presenta la menor cantidad de surprise, siendo casi nula respecto a los demas, esto se interpreta como su poca capacidad para descubrir nuevas cosas, de actuar con curiosidad.
+No asi como personajes mas sabios como lo son Dumbledore que estan dispuestos a admitir su ignorancia cuando se amerita, llevandolo a buscar soluciones y re plantearse sus puntos de vista.
 
 
+Conclusiones Generales
+Los protagonistas (Harry, Hermione y Ron) mantienen un balance entre emociones positivas y negativas, con una fuerte presencia de trust (confianza), lo que refuerza el tema de amistad y trabajo en equipo.
+Dumbledore encarna la sabiduría y la esperanza, mientras que Snape es un personaje marcado por la tristeza y la ambigüedad emocional.
+
+Voldemort, como villano principal, está definido por emociones negativas como anger y fear, destacando su papel como fuente de conflicto en la saga.
+La comparación revela cómo las emociones reflejan la construcción narrativa de cada personaje, alineando sus emociones dominantes con sus arcos de desarrollo en la historia.
 
 
 # 5. Compartir
