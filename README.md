@@ -129,6 +129,16 @@ Las emociones seran extraídas usando la librería syuzhet.
 R para la minería de texto, análisis y visualización.
 Librerías principales: ggplot2, reshape2, syuzhet, tidyr.
 
+Visualización:
+ggplot2, wordcloud, igraph
+Análisis avanzado:
+topicmodels, syuzhet
+
+
+###### describir los paqueetes usados  tipo:
+library(harrypotter) # for the raw text
+library(tidyverse)   # data manipulation
+library(tidytext)    # for text mining
 
 
 ###### ################################################################################################################################################
@@ -533,7 +543,8 @@ Tambien Voldemort es el personaje que presenta la menor cantidad de surprise, si
 No asi como personajes mas sabios como lo son Dumbledore que estan dispuestos a admitir su ignorancia cuando se amerita, llevandolo a buscar soluciones y re plantearse sus puntos de vista.
 
 
-Conclusiones Generales
+* Conclusiones Generales
+
 Los protagonistas (Harry, Hermione y Ron) mantienen un balance entre emociones positivas y negativas, con una fuerte presencia de trust (confianza), lo que refuerza el tema de amistad y trabajo en equipo.
 Dumbledore encarna la sabiduría y la esperanza, mientras que Snape es un personaje marcado por la tristeza y la ambigüedad emocional.
 
@@ -559,48 +570,10 @@ Libros:
 Emociones más positivas en los libros iniciales.
 Aumento de emociones negativas como miedo y tristeza hacia el final de la saga.
 
-Conclusiones y Extensiones
-Conclusiones
+
 Las emociones reflejan la evolución temática de la saga.
-Los personajes principales tienen perfiles emocionales únicos que contribuyen a su caracterización.
-Extensiones Futuras
-Aplicar técnicas de aprendizaje automático para clasificar emociones en frases específicas.
-Analizar co-ocurrencias de emociones en diálogos clave.
-Ampliar el análisis a otras sagas literarias para comparar patrones.
+Los personajes principales tienen perfiles emocionales únicos que contribuyen a su caracterización y gradual complejidad.
 
-
-
-
-
-
-
-# Integra con tus análisis previos
-
-Relaciona emociones con temas (LDA)
-- Examina si los temas latentes identificados con LDA están asociados con emociones particulares.
-Ejemplo:
- Tema "magia" puede tener más emociones de "alegría".
- Tema "oscuridad" puede asociarse con "miedo" o "tristeza".
-
-
-
-
-Visualización:
-ggplot2, wordcloud, igraph
-Análisis avanzado:
-topicmodels, syuzhet
-
-
-###### describir los paqueetes usados  tipo:
-library(harrypotter) # for the raw text
-library(tidyverse)   # data manipulation
-library(tidytext)    # for text mining
-
-###### Que hechizos se hacen mas a lo largo de la saga? 
-
-accio 
-spelliermus
-hechizos imperdonables
 
 
 # 6. Actuar
