@@ -2,10 +2,31 @@
 
 # 📚 Análisis de Texto de la Saga de Harry Potter 🧙‍♂️
 
+
+Tabla de Contenidos:
+1. Preguntar
+2. Preparar
+3. Procesar
+4. Analisis
+5. Compartir
+
+
+
+
+
+Estructura del Proyecto
+Metodología
+Análisis de Emociones
+Comparación de Personajes
+Comparación de Libros
+Resultados
+Conclusiones y Extensiones
+
+
 ### Descripción del Proyecto
 
 Este proyecto realiza un análisis del texto completo de los siete libros de la saga Harry Potter mediante técnicas de minería de datos 
-y procesamiento de lenguaje natural (PLN). El objetivo principal es extraer patrones, identificar palabras clave, explorar características 
+y analisis de sentimientos. El objetivo principal es extraer patrones, identificar palabras clave, explorar características 
 lingüísticas y las emociones de personajes que permitan una comprensión más profunda de esta icónica obra literaria.
 
 A través del uso de R y librerías especializadas, este análisis se desarrolla utilizando métodos de preprocesamiento de texto, 
@@ -20,6 +41,11 @@ Identificar palabras frecuentes, temas recurrentes y asociaciones de términos c
 Visualizar patrones en el texto mediante gráficas, nubes de palabras y diagramas. [EDIT]
 
 Proponer nuevos enfoques analíticos, incluyendo análisis de sentimientos, modelado de tópicos y análisis de complejidad textual. [EDIT]
+
+Objetivos del Proyecto
+Visualizar la distribución de emociones entre los personajes principales.
+Comparar las emociones presentes en los diferentes libros de la saga.
+Descubrir patrones emocionales que puedan aportar un entendimiento más profundo de los textos.
 
 
 # 1. Preguntar
@@ -89,6 +115,17 @@ Comprehensive/Integralidad: Texto extraido de los libros de Harry Potter, saga c
 Current/Actuales: Exitosa saga estrenada en 30 de junio de 1997 qe finalizo con su ultimo libro en 21 de julio de 2007.
 
 Cited/Citación: [?????????] No es necesaria
+
+
+Estructura del Proyecto
+Datos:
+
+Los datos de la saga fueron procesados desde texto en bruto (formato PDF/TXT) utilizando librerías como pdftools y tm.
+Las emociones fueron extraídas usando la librería syuzhet.
+Herramientas:
+
+R para la minería de texto, análisis y visualización.
+Librerías principales: ggplot2, reshape2, syuzhet, tidyr.
 
 ###### ################################################################################################################################################
 
@@ -439,6 +476,34 @@ Grafico de pizza
 
 
 ###################################################################
+
+
+Resultados
+Los resultados obtenidos destacan diferencias significativas en la distribución de emociones:
+
+Personajes principales:
+
+Harry Potter: Dominado por emociones de tristeza y miedo.
+Hermione Granger: Mayor proporción de alegría y confianza.
+Voldemort: Predominan emociones negativas como ira y disgusto.
+Libros:
+
+Emociones más positivas en los libros iniciales.
+Aumento de emociones negativas como miedo y tristeza hacia el final de la saga.
+
+Conclusiones y Extensiones
+Conclusiones
+Las emociones reflejan la evolución temática de la saga.
+Los personajes principales tienen perfiles emocionales únicos que contribuyen a su caracterización.
+Extensiones Futuras
+Aplicar técnicas de aprendizaje automático para clasificar emociones en frases específicas.
+Analizar co-ocurrencias de emociones en diálogos clave.
+Ampliar el análisis a otras sagas literarias para comparar patrones.
+
+
+
+
+
 
 
 # Integra con tus análisis previos
