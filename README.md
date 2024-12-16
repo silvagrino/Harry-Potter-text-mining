@@ -102,13 +102,13 @@ names(conteo_palabras) <- paste("Libro", 1:length(texto_libros))
 print(conteo_palabras)
 ```
 
-1. Harry Potter y la piedra filosofal: 781.865 palabras.
-2. Harry Potter y la cámara secreta: 91.422 palabras.
-3. Harry Potter y el prisionero de Azkaban: 110.080 palabras.
-4. Harry Potter y el cáliz de fuego: 199.881 palabras.
-5. Harry Potter y la Orden del Fénix: 278.698 palabras.
-6. Harry Potter y el misterio del príncipe: 175.260 palabras.
-7. Harry Potter y las reliquias de la muerte: 208.902 palabras.
+* Harry Potter y la piedra filosofal: 781.865 palabras.
+* Harry Potter y la cámara secreta: 91.422 palabras.
+* Harry Potter y el prisionero de Azkaban: 110.080 palabras.
+* Harry Potter y el cáliz de fuego: 199.881 palabras.
+* Harry Potter y la Orden del Fénix: 278.698 palabras.
+* Harry Potter y el misterio del príncipe: 175.260 palabras.
+* Harry Potter y las reliquias de la muerte: 208.902 palabras.
 
 ### Para preparar los datos aplicaré un Enfoque ROCCC:
 
@@ -298,7 +298,7 @@ El conflicto de las varitas tiene presencia en la septima entrega. voldemort
 
 Las palabras clave y sus asociaciones a traves de toda la saga.
 ```
-  findAssocs(tdm_8, terms = c("magia", "hogwarts", "harry", "ron", "dumbledore", "hermione", "hagrid", "snape", "voldemort", "malfoy", "potter", "varita"), corlimit = .20) 
+  findAssocs(tdm_8, terms = c("magia", "hogwarts", "harry", "ron", "dumbledore", "hermione", "hagrid", "snape", "voldemort", "malfoy", "potter", "varita"), corlimit = .18) 
   ```
 
 
@@ -348,7 +348,7 @@ Es importante compartir este codigo para que el usuario pueda interactuar con es
 ```
 
 
-Harry Potter y la Orden del Fénix
+### Harry Potter y la Orden del Fénix
 
 ![](imagenes/gifLDA/LDAlibro5.gif)
 
@@ -361,7 +361,7 @@ Como en cada uno de los librso el nombre de el trio protagonista se repite.
 
 
 
-Harry Potter y el misterio del príncipe
+### Harry Potter y el misterio del príncipe
 
 ![](imagenes/gifLDA/LDAlibro6.gif)
 
@@ -372,7 +372,7 @@ profesor Slughorn. Otra de la cabala de Hagrid y Aragog. Dos burbjuas muy juntas
 
 
 
-Harry Potter y las reliquias de la muerte
+### Harry Potter y las reliquias de la muerte
 
 ![](imagenes/gifLDA/LDAlibro7.gif)
 
