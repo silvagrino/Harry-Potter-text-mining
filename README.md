@@ -15,7 +15,7 @@
 
 [5. Compartir](https://github.com/silvagrino/Harry-Potter-text-mining?tab=readme-ov-file#5-compartir)
 
-
+[6. Actuar]()
 
 
 
@@ -43,9 +43,9 @@ Procesar y limpiar los textos de los libros para convertirlos en datos estructur
 
 Identificar palabras frecuentes, temas recurrentes y asociaciones de términos clave.
 
-Visualizar patrones en el texto mediante gráficas, nubes de palabras y diagramas. [EDIT]
+Visualizar patrones en el texto mediante gráficas, nubes de palabras y diagramas.
 
-Proponer nuevos enfoques analíticos, incluyendo análisis de sentimientos, modelado de tópicos y análisis de complejidad textual. [EDIT]
+Proponer nuevos enfoques analíticos, incluyendo análisis de sentimientos, modelado de tópicos y frecuencias.
 
 Objetivos del Proyecto
 Visualizar la distribución de emociones entre los personajes principales.
@@ -86,6 +86,7 @@ asosaciones
 1. Preparación de Datos
 
 Fuente de Datos: Archivos pdf de la saga de libros Harry Potter. Constituido por 8 archivos. Un archivo que contiene la saga completa y 7 archivos individuales para cada libro de la saga.
+Los datos de la saga fueron procesados desde texto en bruto (formato PDF/TXT) utilizando librerías como pdftools y tm.
 
 ### Cantidad de palabras 
 ```
@@ -121,16 +122,14 @@ Current/Actuales: Exitosa saga estrenada en 30 de junio de 1997 qe finalizo con 
 
 Cited/Citación: [?????????] No es necesaria
 
-
-Estructura del Proyecto
-Datos:
-
-Los datos de la saga fueron procesados desde texto en bruto (formato PDF/TXT) utilizando librerías como pdftools y tm.
-Las emociones fueron extraídas usando la librería syuzhet.
 Herramientas:
+
+Las emociones seran extraídas usando la librería syuzhet.
 
 R para la minería de texto, análisis y visualización.
 Librerías principales: ggplot2, reshape2, syuzhet, tidyr.
+
+
 
 ###### ################################################################################################################################################
 
@@ -199,7 +198,8 @@ Para ello creo un bucle para procesar cada archivo, asi no tendré que repetir e
     assign(nombre_resultado, resultado)  
   }
 ```
-Con la frecuencia de terminos para toda la saga puedo analizar cada libro
+
+Con la frecuencia de terminos para toda la saga puedo hacer varios analisis.
 
 
 
@@ -362,10 +362,6 @@ Harry Potter y las reliquias de la muerte
 
 
 
-# ANALIZAR CORRELACIONES DE PALABRAS CLAVES.
-
-
-  
 ## Analisis de sentimientos
 
 ### Personajes principales, emociones y polaridades asociadas.
@@ -378,35 +374,30 @@ Evolución narrativa: Analizar cómo las emociones cambian a lo largo de la saga
 
   
 ##  Evaluar emociones y polaridad en los textos.
-  
- 
-  library(syuzhet)
 
-  El análisis de sentimientos con el paquete syuzhet puede complementar tu trabajo actual al explorar
-las emociones y polaridades presentes en los textos
+```
+install.packages("syuzhet")
+library(syuzhet)
+```
 
-El paquete syuzhet incluye el lexicón NRC, que evalúa 8 emociones (alegría, tristeza, miedo, etc.) y la polaridad (positivo/negativo).
+El paquete syuzhet para análisis de sentimientos incluye el lexicón NRC, que evalúa 8 emociones (alegría, tristeza, miedo, etc.) y la polaridad (positivo/negativo).
 
-
+```
   resultados_emociones <- lapply(texto_libros, function(texto) {
     get_nrc_sentiment(texto)
   })
   
   # Plot Barra de columnas
   
-```
   barplot(colSums(resultados_emociones[[8]]), las = 2, col = rainbow(10),
           main = "Distribución de emociones en la saga")
 ```
-######  incluir porcentajes ################################################
 
-![](imagenes/comparacionemociones4.png)
+![](imagenes/comparacionemocionessaga.png)
 
 ###### Cuantos libros mas individuales?
  
 ![](imagenes/comparacionemocionesbook.png)
-
-
 
 
 ### Analisis de la polaridad. Comparacion entre libros:
@@ -424,9 +415,6 @@ El paquete syuzhet incluye el lexicón NRC, que evalúa 8 emociones (alegría, t
 ![](imagenes/polaridadporlibro.png)
 
 
-
-
-## polaridad libros positiva/negativas
 
 ```
 polaridad_libros <- data.frame(
