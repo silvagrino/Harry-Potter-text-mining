@@ -296,14 +296,14 @@ El conflicto de las varitas tiene presencia en la septima entrega. voldemort
 
 ### Asociaciones de palabras 
 
-Las palabras mas repetidas de la saga y sus asociaciones.
+Las palabras clave y sus asociaciones a traves de toda la saga.
 ```
   findAssocs(tdm_8, terms = c("magia", "hogwarts", "harry", "ron", "dumbledore", "hermione", "hagrid", "snape", "voldemort", "malfoy", "potter", "varita"), corlimit = .20) 
   ```
 
-![](imagenes/asociaciones020.png)
 
-[ EDIT ]
+![](imagenes/Asociaciones018.png)
+![](imagenes/Asociaciones0182.png)
 
 
 
@@ -312,7 +312,7 @@ Las palabras mas repetidas de la saga y sus asociaciones.
   ### Modelado de Tópicos
   
  Para este modelado de topicos hare uso de LDA (Latent Dirichlet Allocation) para identificar temas latentes.
-
+Es importante compartir este codigo para que el usuario pueda interactuar con este grafico y explorar las multiples opciones que ofrece para las relacions de esa red semantica.
 
  ```
   # Imprimir los temas por libro
@@ -352,13 +352,39 @@ Harry Potter y la Orden del Fénix
 
 ![](imagenes/gifLDA/LDAlibro5.gif)
 
+Las burbjuas de topicos varian entre las relacionadas con la profesora Umbridge que tienegran ppresencia en el libro. Muy cerca hay otra burbuja que representa la visita al bosque prohibido que tambien tiene mucho que ver con la profesora Umbrdige.
+Otra es parte de lo que pasa antes de que inice el año escolar de Harry, teniendo que ver con sus tios, Sirius y todo el arco antes del comienzo del año escolar dentro de Hogwarts.
+Tambien se presenta una burbuja que representa todo lo relacionado a la profecia, Neville y la visita al ministerio de Magia.
+Como en cada uno de los librso el nombre de el trio protagonista se repite.
+
+
+
+
+
 Harry Potter y el misterio del príncipe
 
 ![](imagenes/gifLDA/LDAlibro6.gif)
 
+Una burbuja apartada correspondiente a la familia Gaunt y los recuerdos de Voldemort. Harry y su relacion con el
+profesor Slughorn. Otra de la cabala de Hagrid y Aragog. Dos burbjuas muy juntas correspondientes a la sala de los menesteres, dobby y Malfoy. Narcisa y los Weasley.
+
+
+
+
+
 Harry Potter y las reliquias de la muerte
 
 ![](imagenes/gifLDA/LDAlibro7.gif)
+
+Una burbuja enlaza temas como el valle de Godric y Dumbledore.
+Temas relacionados con variedad de nombres que se presentan hasta que Harry parte de casa de sus tios.
+Tema relacionado con Olivander, la varita de sauco y los horrocruxes. El resto son 2 burbujas variadas que tienen que ver con kreacher, Regulus, prisioneros, iglesia, estatuas y paredes.
+
+
+
+
+
+[ Necesito exportarlo para que se pueda interactuar con el LDA]
 
 
 
@@ -366,8 +392,7 @@ Harry Potter y las reliquias de la muerte
 
 ### Personajes principales, emociones y polaridades asociadas.
 
-
-¿Qué puedes obtener de este análisis?
+¿Qué espero obtener de este análisis?
 Distribución emocional: Cómo varían las emociones (miedo, tristeza, alegría, etc.) en cada libro.
 Tono general: Identificar si un libro es más positivo o negativo en términos emocionales.
 Evolución narrativa: Analizar cómo las emociones cambian a lo largo de la saga, reflejando el desarrollo de la trama.
@@ -395,12 +420,18 @@ El paquete syuzhet para análisis de sentimientos incluye el lexicón NRC, que e
 
 ![](imagenes/comparacionemocionessaga.png)
 
-###### Cuantos libros mas individuales?
- 
+Se ve un proporcion de emociones relativamente equilibrada aunque se tiende a tener mas emociones negativas, probablemente representada en que los libros que presentan tematicas mas oscuras y relacionadas con la muerte son libros mas largos.
+
+### Comparacion entre libros de la saga
+
 ![](imagenes/comparacionemocionesbook.png)
+
+La visualización revela que un fuerte enfoque en confianza (trust) y tristeza (sadness) dominan la narrativa. Aunque hay momentos de alegría y sorpresa, son opacados por las emociones más intensas que definen el tono emocional de Harry Potter.
+
 
 
 ### Analisis de la polaridad. Comparacion entre libros:
+
   ```
   polaridad <- sapply(resultados_emociones, function(emociones) {
     sum(emociones$positive) - sum(emociones$negative)
@@ -414,6 +445,9 @@ El paquete syuzhet para análisis de sentimientos incluye el lexicón NRC, que e
 
 ![](imagenes/polaridadporlibro.png)
 
+En este grafico se puede ver de manera mas explicita la diferencia entre de polaridades entre los diferentes libros.
+Los 3 primeros libros son los mas positivos que gradualmente se van haciendo mas oscuros. En el 4to la diferencia es mucha, esto tiene sentido al considerar que en este libro Voldemort vuelve y se presenta la primera muerte significativa que Harry presencia, la muerte de Cedric Diggory.
+* "Libro  8" representa la saga completa.
 
 
 ```
@@ -433,15 +467,17 @@ ggplot(polaridad_libros, aes(x = Libro, y = Frecuencia, fill = Polaridad)) +
 ```
 ![](imagenes/polaridademocionallibro.png)
 
-### Como se puede ver la progresion de los libros hacia tematicas mas oscuras y negativas. [big chiet]
+El 5to libro se presenta como uno mucho mas positivo, no hay muertes y Harry toma mas autonomia y liderazgo al crear la Orden del Fenix. El 6to libro vuelve a tener una polaridad mas negativa con respecto a su antecesor pero aun asi no tanto como el 4to. Este libro presenta tematicas mas profundas relacionadas con el pasado de Voldemort, sus recuerdos, los Horrocruxes y la muerte de Dumbledore.
+Finalmente el 7to libro es el libro con la polaridad mas negativa de la saga, esto debido a que se presentan situaciones cercanas a la muerte, temas relacionados con esta y el sacrificio de parte de Harry, la destruccion de los horrocruxes, y finalmente la ballata de Hogwarts la cual presenta la mayor cantidad de muertes.
 
+La consistencia de estas emociones refleja un patrón recurrente en la saga de Harry Potter, donde momentos oscuros se equilibran con esperanza y momentos alegres.
+* El "libro 8" representa la saga completa
 
-4to libro la primera muerte de un personaje. 
 
 
 ## Emociones por personajes 
 
-Grafico de pizza
+### Grafico de pizza
 
 ```
  ggplot(datos_harry, aes(x = "", y = Frecuencia, fill = Emocion)) +
@@ -533,3 +569,6 @@ library(tidytext)    # for text mining
 accio 
 spelliermus
 hechizos imperdonables
+
+
+# 6. Actuar
