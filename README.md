@@ -4,7 +4,8 @@
 
 
 Tabla de Contenidos:
-[1. Preguntar]
+
+[1. Preguntar](https://github.com/silvagrino/Harry-Potter-text-mining?tab=readme-ov-file#1-preguntar)
 2. Preparar
 3. Procesar
 4. Analisis
