@@ -6,7 +6,7 @@
 ### Descripción del Proyecto
 
 Este proyecto realiza un análisis del texto completo de los siete libros de la saga Harry Potter mediante técnicas de minería de datos 
-y analisis de sentimientos. El objetivo principal es extraer patrones, identificar palabras clave, explorar características 
+y análisis de sentimientos. El objetivo principal es extraer patrones, identificar palabras clave, explorar características 
 lingüísticas y las emociones de personajes que permitan una comprensión más profunda de esta icónica obra literaria.
 
 A través del uso de R y librerías especializadas, este análisis se desarrolla utilizando métodos de preprocesamiento de texto, 
@@ -53,7 +53,7 @@ Preguntas que guiarán el análisis
 # 2. Preparar
 
 
-Fuente de Datos: Archivos pdf de la saga de libros Harry Potter. Constituido por 8 archivos. Un archivo que contiene la saga completa y 7 archivos individuales para cada libro de la saga.
+Fuente de Datos: Archivos PDF de la saga de libros Harry Potter. Constituido por 8 archivos. Un archivo que contiene la saga completa y 7 archivos individuales para cada libro de la saga.
 Los datos de la saga fueron procesados desde texto en bruto (formato PDF/TXT) utilizando librerías como pdftools y tm.
 
 ### Cantidad de palabras 
@@ -80,13 +80,13 @@ print(conteo_palabras)
 
 ### Para preparar los datos aplicaré un Enfoque ROCCC:
 
-Reliable/Confiablilidad: Famosa saga de libros escritos por la autora JK Rowling. 
+Reliable/Confiablilidad: Famosa saga de libros escritos por la autora J. K. Rowling. 
 
 Original/Originalidad: Datos originales obtenidos directamente de los libros
 
-Comprehensive/Integralidad: Texto extraido de los libros de Harry Potter, saga consistente en 7 libros 
+Comprehensive/Integralidad: Texto extraído de los libros de Harry Potter, saga consistente en 7 libros 
 
-Current/Actuales: Exitosa saga estrenada en 30 de junio de 1997 qe finalizo con su ultimo libro en 21 de julio de 2007.
+Current/Actuales: Exitosa saga estrenada en 30 de junio de 1997 que finalizo con su último libro en 21 de julio de 2007.
 
 Cited/Citación: [?????????] No es necesaria
 
@@ -112,13 +112,13 @@ library(syuzhet)
 
 Preprocesamiento de Texto:
 
-Creo un corpus para limpiar los textos, entre los cambios que aplicare al texto original se encuentran:
+Creo un corpus para limpiar los textos, entre los cambios que aplicaré al texto original se encuentran:
 Convertir a minúsculas.
 Eliminar puntuación y números.
 Remover palabras irrelevantes (stopwords) en español.
 Remover palabras y caracteres especiales. 
 
-Empiezo a procesar los archivos incluyendolos a una lista de pdf, para luego iterar sobre ella y crear el corpus para cada libro
+Empiezo a procesar los archivos, incluyéndolos a una lista de PDF, para luego iterar sobre ella y crear el corpus para cada libro
 
 ```
     corpus <- Corpus(VectorSource(texto))
@@ -136,14 +136,14 @@ Empiezo a procesar los archivos incluyendolos a una lista de pdf, para luego ite
     corpus <- tm_map(corpus, content_transformer(function(x) gsub("preguntó", "", x)))
 ```
 
-Limpio ademas signos especiales y palabras tipicos de una narracion como esta, las cuales se repetiran mucho, no quiero que estos signos desvien mi analisis.
+Limpio además signos especiales y palabras típicos de una narración como esta, las cuales se repetirán mucho, no quiero que estos signos desvíen mi análisis.
 
 
-# 4. Analisis
+# 4. Análisis
 
 
 Creo la matriz de términos-documentos para poder calcular la frecuencia de términos para cada libro.
-Para ello creo un bucle para procesar cada archivo, asi no tendré que repetir el codigo para cada uno de los 8 archivos.
+Para ello creo un bucle para procesar cada archivo, así no tendré que repetir el código para cada uno de los 8 archivos.
 
 ```
   for (i in 1:8) {
@@ -174,12 +174,12 @@ Para ello creo un bucle para procesar cada archivo, asi no tendré que repetir e
   }
 ```
 
-Esta frecuencia de terminos para toda la saga me permite hacer varios analisis relacionados con la frecuencia de palabras
+Esta frecuencia de términos para toda la saga me permite hacer varios análisis relacionados con la frecuencia de palabras
 
 
 ## Frecuencia de palabras
 
-### Nube de palabas de la saga completa
+### Nube de palabras de la saga completa
   
 ```
   wordcloud(words = corpus_filtrado_ordenado8$palabra, 
@@ -192,7 +192,7 @@ Esta frecuencia de terminos para toda la saga me permite hacer varios analisis r
 
 <img src="imagenes/nubedepalabrassaga.png" alt="Descripción de la imagen" width="550">
 
-Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta saga junto con Ron y Hermione, el trio protagonista y los demas personajes secundarios presentes en toda la saga.
+Por supuesto, la palabra más repetida es "Harry Potter", protagonista de esta saga junto con Ron y Hermione, el trío protagonista y los demás personajes secundarios presentes en toda la saga.
 
 
 ## Nube de palabras para libro 1 y 3
@@ -208,9 +208,9 @@ El Libro 3 presenta una narrativa más compleja y madura, con nuevos personajes 
 Si bien Harry sigue siendo el centro de la historia, el Libro 3 amplía el protagonismo de otros personajes clave como Lupin y Sirius Black.
 
 
-## Graficas de frecuencia
+## Gráficas de frecuencia
   
-# Numero de usos
+# Número de usos
 
 ```
   corpus_filtrado_ordenado8[1:13, ] %>%
@@ -225,18 +225,14 @@ Si bien Harry sigue siendo el centro de la historia, el Libro 3 amplía el prota
 
 ### Libro 2 y 4
 
-![](imagenes/palabrasmasfrecuentes2.png)
-
-El trio protagonista es lo que mas se repite asi en estos libros asi como en todo el resto de la saga.
- En este segundo libro todavia se estan explorando personajes que 
-tendran una presencia permanente. Tambien vemos la presencia de un personaje que solo aparece en esta entrega; Lockhart.
+El trío protagonista es lo que más se repite así en estos libros, así como en todo el resto de la saga.
+ En este segundo libro todavía se están explorando personajes que  tendrán una presencia permanente. También vemos la presencia de un personaje que solo aparece en esta entrega; Lockhart.
 
 
 ![](imagenes/palabrasmasfrecuentes4.png)
 
 Moody nuevo personaje que se presenta y que participa en parte importante del libro. La inusual cantidad de veces que se repite la palabra Señor puede
-estar dado por el regreso de Voldemort y la relacion con Peter Pettigrew.
-
+estar dado por el regreso de Voldemort y la relación con Peter Pettigrew.
 
 ### Porcentaje de uso saga
 
@@ -256,20 +252,19 @@ estar dado por el regreso de Voldemort y la relacion con Peter Pettigrew.
 
 
 ![](imagenes/palabrasmasfrecuentes5por.png)
-
-Gran presencia de profesora Umbridge y la consolidación de la relacion de Harry con Sirius
+Gran presencia de profesora Umbridge y la consolidación de la relación de Harry con Sirius
 
 
 ![](imagenes/palabrasmasfrecuentes7por.png)
 
-El conflicto de las varitas y como Voldemort trata de obtener la varita de sauco tiene presencia en la septima entrega y se ve representado por la frecuencia de las palabras varita y Voldemort.
+El conflicto de las varitas y como Voldemort trata de obtener la varita de saúco, tiene presencia en la séptima entrega y se ve representado por la frecuencia de las palabras varita y Voldemort.
 
 
 
 
 ### Asociaciones de palabras 
 
-Las palabras clave y sus asociaciones a traves de toda la saga. Aplicare un indice de asocia
+Las palabras clave y sus asociaciones a través de toda la saga. Aplicaré un índice de asociación
 ```
   findAssocs(tdm_8, terms = c("magia", "hogwarts", "harry", "ron", "dumbledore", "hermione", "hagrid", "snape", "voldemort", "malfoy", "potter", "varita"), corlimit = .18) 
   ```
@@ -278,9 +273,9 @@ Las palabras clave y sus asociaciones a traves de toda la saga. Aplicare un indi
 ![](imagenes/Asociaciones018.png)
 ![](imagenes/Asociaciones0182.png)
 
-Es interesante ver la diferencia entre palabras que no tienen muchas palabras asociadas y otras que si.  El trio protagonista por su caracter de protagonismo viven demasiadas situacions distintas,
-en muchos contextos, por eso no es raro ver que no tienen muchas correlaciones y las que tienen son muy debiles. Es importante recalcar que esta funcion ha sido aplicada a la saga completa por lo tanto tampoco 
-se esperan correlaciones muy fuertes entre palabras, pero si puede ser interesante de ver en casos particulares.
+Es interesante ver la diferencia entre palabras que no tienen muchas palabras asociadas y otras que sí.  El trío protagonista, por su carácter de protagonismo, viven demasiadas situaciones distintas,
+en muchos contextos, por eso no es raro ver que no tienen muchas correlaciones y las que tienen son muy débiles. Es importante recalcar que esta función ha sido aplicada a la saga completa, por lo tanto, tampoco 
+se esperan correlaciones muy fuertes entre palabras, pero sí puede ser interesante de ver en casos particulares.
 
 
 
@@ -288,8 +283,8 @@ se esperan correlaciones muy fuertes entre palabras, pero si puede ser interesan
 
   ### Modelado de Tópicos
   
- Para este modelado de topicos hare uso de LDA (Latent Dirichlet Allocation) para identificar temas latentes.
-Es importante compartir este codigo para que el usuario pueda interactuar con este grafico y explorar las multiples opciones que ofrece para las relacions de esa red semantica.
+ Para este modelado de tópicos haré uso de LDA (Latent Dirichlet Allocation) para identificar temas latentes.
+Es importante compartir este código para que el usuario pueda interactuar con este gráfico y explorar las múltiples opciones que ofrece para las relaciones de esa red semántica.
 
  ```
   # Imprimir los temas por libro
@@ -329,10 +324,10 @@ Es importante compartir este codigo para que el usuario pueda interactuar con es
 
 ![](imagenes/gifLDA/LDAlibro5.gif)
 
-Las burbjuas de topicos varian entre las relacionadas con la profesora Umbridge que tienegran ppresencia en el libro. Muy cerca hay otra burbuja que representa la visita al bosque prohibido que tambien tiene mucho que ver con la profesora Umbrdige.
-Otra es parte de lo que pasa antes de que inice el año escolar de Harry, teniendo que ver con sus tios, Sirius y todo el arco antes del comienzo del año escolar dentro de Hogwarts.
-Tambien se presenta una burbuja que representa todo lo relacionado a la profecia, Neville y la visita al ministerio de Magia.
-Como en cada uno de los librso el nombre de el trio protagonista se repite.
+Las burbujas de tópicos varían entre las relacionadas con la profesora Umbridge que tiene gran presencia en el libro. Muy cerca hay otra burbuja que representa la visita al bosque prohibido que también tiene mucho que ver con la profesora Umbrdige.
+Otra es parte de lo que pasa antes de que inicio el año escolar de Harry, teniendo que ver con sus tíos, Sirius y todo el arco antes del comienzo del año escolar dentro de Hogwarts.
+También se presenta una burbuja que representa todo lo relacionado con la profecía, Neville y la visita al ministerio de Magia.
+Como en cada uno de los libros, el nombre del trío protagonista se repite.
 
 
 
@@ -342,8 +337,8 @@ Como en cada uno de los librso el nombre de el trio protagonista se repite.
 
 ![](imagenes/gifLDA/LDAlibro6.gif)
 
-Una burbuja apartada correspondiente a la familia Gaunt y los recuerdos de Voldemort. Harry y su relacion con el
-profesor Slughorn. Otra de la cabala de Hagrid y Aragog. Dos burbjuas muy juntas correspondientes a la sala de los menesteres, dobby y Malfoy. Narcisa y los Weasley.
+Una burbuja apartada correspondiente a la familia Gaunt y los recuerdos de Voldemort. Harry y su relación con él
+profesor Slughorn. Otra de la cabaña de Hagrid y Aragog. Dos burbujas muy juntas correspondientes a la sala de los menesteres, dobby y Malfoy. Narcisa y los Weasley.
 
 
 
@@ -354,8 +349,8 @@ profesor Slughorn. Otra de la cabala de Hagrid y Aragog. Dos burbjuas muy juntas
 ![](imagenes/gifLDA/LDAlibro7.gif)
 
 Una burbuja enlaza temas como el valle de Godric y Dumbledore.
-Temas relacionados con variedad de nombres que se presentan hasta que Harry parte de casa de sus tios.
-Tema relacionado con Olivander, la varita de sauco y los horrocruxes. El resto son 2 burbujas variadas que tienen que ver con kreacher, Regulus, prisioneros, iglesia, estatuas y paredes.
+Temas relacionados con variedad de nombres que se presentan hasta que Harry parte de casa de sus tíos.
+Tema relacionado con Olivander, la varita de saúco y los horrocruxes. El resto son 2 burbujas variadas que tienen que ver con kreacher, Regulus, prisioneros, iglesia, estatuas y paredes.
 
 
 
@@ -365,7 +360,7 @@ Tema relacionado con Olivander, la varita de sauco y los horrocruxes. El resto s
 
 
 
-## Analisis de sentimientos
+## Análisis de sentimientos
 
 ### Personajes principales, emociones y polaridades asociadas.
 
@@ -397,9 +392,9 @@ El paquete syuzhet para análisis de sentimientos incluye el lexicón NRC, que e
 
 ![](imagenes/comparacionemocionessaga.png)
 
-Se ve un proporcion de emociones relativamente equilibrada aunque se tiende a tener mas emociones negativas, probablemente representada en que los libros que presentan tematicas mas oscuras y relacionadas con la muerte son libros mas largos.
+Se ve una distribución de emociones relativamente equilibrada, aunque se tiende a tener más emociones negativas, probablemente representada en que los libros que presentan temáticas más oscuras y relacionadas con la muerte son libros más largos.
 
-### Comparacion entre libros de la saga
+### Comparación entre libros de la saga
 
 ![](imagenes/comparacionemocionesbook.png)
 
@@ -407,7 +402,7 @@ La visualización revela que un fuerte enfoque en confianza (trust) y tristeza (
 
 
 
-### Analisis de la polaridad. Comparacion entre libros:
+### Análisis de la polaridad. Comparación entre libros:
 
   ```
   polaridad <- sapply(resultados_emociones, function(emociones) {
@@ -422,8 +417,8 @@ La visualización revela que un fuerte enfoque en confianza (trust) y tristeza (
 
 ![](imagenes/polaridadporlibro.png)
 
-En este grafico se puede ver de manera mas explicita la diferencia entre de polaridades entre los diferentes libros.
-Los 3 primeros libros son los mas positivos que gradualmente se van haciendo mas oscuros. En el 4to la diferencia es mucha, esto tiene sentido al considerar que en este libro Voldemort vuelve y se presenta la primera muerte significativa que Harry presencia, la muerte de Cedric Diggory.
+En este gráfico se puede ver de manera más explícita la diferencia entre de polaridades entre los diferentes libros.
+Los 3 primeros libros son los más positivos que gradualmente se van haciendo más oscuros. En el 4.º la diferencia es mucha, esto tiene sentido al considerar que en este libro Voldemort vuelve y se presenta la primera muerte significativa que Harry presencia, la muerte de Cedric Diggory.
 * "Libro  8" representa la saga completa.
 
 
@@ -444,11 +439,13 @@ ggplot(polaridad_libros, aes(x = Libro, y = Frecuencia, fill = Polaridad)) +
 ```
 ![](imagenes/polaridademocionallibro.png)
 
-El 5to libro se presenta como uno mucho mas positivo, no hay muertes y Harry toma mas autonomia y liderazgo al crear la Orden del Fenix. El 6to libro vuelve a tener una polaridad mas negativa con respecto a su antecesor pero aun asi no tanto como el 4to. Este libro presenta tematicas mas profundas relacionadas con el pasado de Voldemort, sus recuerdos, los Horrocruxes y la muerte de Dumbledore.
-Finalmente el 7to libro es el libro con la polaridad mas negativa de la saga, esto debido a que se presentan situaciones cercanas a la muerte, temas relacionados con esta y el sacrificio de parte de Harry, la destruccion de los horrocruxes, y finalmente la ballata de Hogwarts la cual presenta la mayor cantidad de muertes.
+El 5.º libro se presenta como uno mucho más positivo, no hay muertes y Harry toma más autonomía y liderazgo al crear la Orden del Fénix. El 6.º libro vuelve a tener una polaridad más negativa con respecto a su antecesor, pero aun así no tanto como el 4.º. Este libro presenta temáticas más profundas relacionadas con el pasado de Voldemort, sus recuerdos, los Horrocruxes y la muerte de Dumbledore.
+Finalmente, el 7to libro es el libro con la polaridad más negativa de la saga, esto debido a que se presentan situaciones cercanas a la muerte, temas relacionados con esta y el sacrificio de parte de Harry, la destrucción de los horrocruxes, y finalmente la ballata de Hogwarts la cual presenta la mayor cantidad de muertes.
 
 La consistencia de estas emociones refleja un patrón recurrente en la saga de Harry Potter, donde momentos oscuros se equilibran con esperanza y momentos alegres.
 * El "libro 8" representa la saga completa
+
+[ EDIT ]
 
 
 
@@ -475,7 +472,7 @@ La consistencia de estas emociones refleja un patrón recurrente en la saga de H
 
 ![](imagenes/emocionesvoldemort.png)
 
-### Comparacion entre personajes principales
+### Comparación entre personajes principales
 
 
 ![](imagenes/comparacionemocionesper.png)
@@ -506,8 +503,8 @@ La presencia de trust es relevante, ya que finalmente se revela como un aliado c
 Voldemort presenta una notable cantidad de fear, negative, y anger, lo cual es lógico considerando su rol como antagonista principal de la saga.
 La anger (ira) y negative (negatividad) dominan su espectro emocional, lo que refleja su naturaleza violenta y vengativa.
 La alta presencia de fear podría interpretarse no solo como el miedo que él causa, sino también como su propio temor a la muerte y a perder el poder.
-Tambien Voldemort es el personaje que presenta la menor cantidad de surprise, siendo casi nula respecto a los demas, esto se interpreta como su poca capacidad para descubrir nuevas cosas, de actuar con curiosidad.
-No asi como personajes mas sabios como lo son Dumbledore que estan dispuestos a admitir su ignorancia cuando se amerita, llevandolo a buscar soluciones y re plantearse sus puntos de vista.
+También Voldemort es el personaje que presenta la menor cantidad de surprise, siendo casi nula respecto a los demás, esto se interpreta como su poca capacidad para descubrir nuevas cosas, de actuar con curiosidad.
+No así como personajes más sabios como lo son Dumbledore que están dispuestos a admitir su ignorancia cuando se amerita, llevándolo a buscar soluciones y replantearse sus puntos de vista.
 
 
 * Conclusiones Generales
