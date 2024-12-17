@@ -3,6 +3,25 @@
 # 📚 Análisis de Texto de la Saga de Harry Potter 🧙‍♂️
 
 
+### Descripción del Proyecto
+
+Este proyecto realiza un análisis del texto completo de los siete libros de la saga Harry Potter mediante técnicas de minería de datos 
+y analisis de sentimientos. El objetivo principal es extraer patrones, identificar palabras clave, explorar características 
+lingüísticas y las emociones de personajes que permitan una comprensión más profunda de esta icónica obra literaria.
+
+A través del uso de R y librerías especializadas, este análisis se desarrolla utilizando métodos de preprocesamiento de texto, 
+extracción de temas, análisis de redes semánticas y más.
+
+### Objetivos del Proyecto
+
+* Procesar y limpiar los textos de los libros para obtener datos estructurados listos para su análisis.
+* Identificar palabras frecuentes, temas recurrentes y asociaciones de términos clave.
+* Visualizar patrones textuales mediante gráficos, nubes de palabras y diagramas.
+* Implementar análisis de sentimientos, modelado de tópicos y estudio de frecuencias.
+* Analizar la distribución de emociones entre los personajes principales y compararlas a lo largo de los diferentes libros de la saga.
+* Descubrir patrones emocionales que ofrezcan un entendimiento más profundo de los textos.
+
+
 ## Tabla de Contenidos:
 
 [1. Preguntar](https://github.com/silvagrino/Harry-Potter-text-mining?tab=readme-ov-file#1-preguntar)
@@ -19,71 +38,20 @@
 
 
 
-Estructura del Proyecto
-Metodología
-Análisis de Emociones
-Comparación de Personajes
-Comparación de Libros
-Resultados
-Conclusiones y Extensiones
-
-
-### Descripción del Proyecto
-
-Este proyecto realiza un análisis del texto completo de los siete libros de la saga Harry Potter mediante técnicas de minería de datos 
-y analisis de sentimientos. El objetivo principal es extraer patrones, identificar palabras clave, explorar características 
-lingüísticas y las emociones de personajes que permitan una comprensión más profunda de esta icónica obra literaria.
-
-A través del uso de R y librerías especializadas, este análisis se desarrolla utilizando métodos de preprocesamiento de texto, 
-extracción de temas, análisis de redes semánticas y más.
-
-# Objetivos del Proyecto
-
-Procesar y limpiar los textos de los libros para convertirlos en datos estructurados listos para análisis.
-
-Identificar palabras frecuentes, temas recurrentes y asociaciones de términos clave.
-
-Visualizar patrones en el texto mediante gráficas, nubes de palabras y diagramas.
-
-Proponer nuevos enfoques analíticos, incluyendo análisis de sentimientos, modelado de tópicos y frecuencias.
-
-Objetivos del Proyecto
-Visualizar la distribución de emociones entre los personajes principales.
-Comparar las emociones presentes en los diferentes libros de la saga.
-Descubrir patrones emocionales que puedan aportar un entendimiento más profundo de los textos.
-
 
 # 1. Preguntar
 
--Como cambia la saga a traves de los 7 años en que transcurre esta obra literaria?
+Preguntas que guiarán el análisis
 
--Cuales son los personajes que destacan en cada libro independiente de los principales?
+* ¿Cómo evolucionan los temas y emociones a lo largo de los libros de la saga?
 
-Que palabras se asocian con ciertos personajes?  y cuales son los sentimientos que los acompañan?
+* ¿Qué palabras y sentimientos se asocian con los personajes principales?
 
--Hay algunos personajes que estan mas relacionados con ciertos sentimientos que otros?
+* ¿Qué patrones emocionales y tópicos predominan en los libros y personajes?
 
--Que analisis extras y conclusiones podemos sacar mediante la mineria de texto aplicada en este analisis?
-
-Analizar la frecuencia de palabras relacionadas con emociones y temas a lo largo de los capítulos.
-
-Que topicos son los que predominan en cada libro?
-
-
-# RE EVALUAR / PREGUNTAS MACROS
-
-Cuale son los principales temas abordados por libro?
-
-Que emociones predominan en los personajes principales a traves de toda la saga?
-
-
-asociaciones DIFERNCIA?
-asosaciones
 
 # 2. Preparar
 
-
-1. Preparación de Datos
 
 Fuente de Datos: Archivos pdf de la saga de libros Harry Potter. Constituido por 8 archivos. Un archivo que contiene la saga completa y 7 archivos individuales para cada libro de la saga.
 Los datos de la saga fueron procesados desde texto en bruto (formato PDF/TXT) utilizando librerías como pdftools y tm.
@@ -122,24 +90,21 @@ Current/Actuales: Exitosa saga estrenada en 30 de junio de 1997 qe finalizo con 
 
 Cited/Citación: [?????????] No es necesaria
 
-Herramientas:
-
-Las emociones seran extraídas usando la librería syuzhet.
+### Herramientas:
 
 R para la minería de texto, análisis y visualización.
-Librerías principales: ggplot2, reshape2, syuzhet, tidyr.
+Librerías principales: 
 
-Visualización:
-ggplot2, wordcloud, igraph
-Análisis avanzado:
-topicmodels, syuzhet
+library(ggplot2) 
+library(reshape2)   
+library(tidyr)    
+ibrary(wordcloud) 
+library(igraph) 
 
-
-###### describir los paqueetes usados  tipo:
-library(harrypotter) # for the raw text
-library(tidyverse)   # data manipulation
-library(tidytext)    # for text mining
-
+ Análisis avanzado: 
+ibrary(topicmodels) 
+library(syuzhet) 
+ 
 
 ###### ################################################################################################################################################
 
@@ -170,8 +135,8 @@ Empiezo a procesar los archivos incluyendolos a una lista de pdf, para luego ite
     corpus <- tm_map(corpus, content_transformer(function(x) gsub("dijo", "", x)))
     corpus <- tm_map(corpus, content_transformer(function(x) gsub("preguntó", "", x)))
 ```
-Limpio ademas signos especiales y palabras tipicos de una narracion como esta, los cuales de seguro se repetiran mucho,
- no quiero que genere informacion engañosa en mi analisis
+
+Limpio ademas signos especiales y palabras tipicos de una narracion como esta, las cuales se repetiran mucho, no quiero que estos signos desvien mi analisis.
 
 
 # 4. Analisis
@@ -209,8 +174,7 @@ Para ello creo un bucle para procesar cada archivo, asi no tendré que repetir e
   }
 ```
 
-Con la frecuencia de terminos para toda la saga puedo hacer varios analisis.
-
+Esta frecuencia de terminos para toda la saga me permite hacer varios analisis relacionados con la frecuencia de palabras
 
 
 ## Frecuencia de palabras
@@ -228,9 +192,8 @@ Con la frecuencia de terminos para toda la saga puedo hacer varios analisis.
 
 <img src="imagenes/nubedepalabrassaga.png" alt="Descripción de la imagen" width="550">
 
-Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta saga junto con Ron y Hermione y los demas personajes presentes en toda la saga.
+Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta saga junto con Ron y Hermione, el trio protagonista y los demas personajes secundarios presentes en toda la saga.
 
-############################################################################## palabras ############33
 
 ## Nube de palabras para libro 1 y 3
 
@@ -239,7 +202,10 @@ Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta sag
 ![](imagenes/nubepalabras1.png)   ![](imagenes/nubepalabras3.png)
 
 
+El Libro 1 introduce a los personajes, el entorno escolar (Hogwarts) y elementos básicos de la magia, con un tono de descubrimiento y asombro.
+El Libro 3 presenta una narrativa más compleja y madura, con nuevos personajes (Lupin, Black, Sirius) y temas oscuros como los dementores y las traiciones (Scabbers y Pettigrew).
 
+Si bien Harry sigue siendo el centro de la historia, el Libro 3 amplía el protagonismo de otros personajes clave como Lupin y Sirius Black.
 
 
 ## Graficas de frecuencia
@@ -261,15 +227,15 @@ Por supuesto la palabra mas repetida es "Harry Potter", protagonista de esta sag
 
 ![](imagenes/palabrasmasfrecuentes2.png)
 
-Los 3 personajes principales son los que mas se repiten asi como en la mayoria de 
-las frecuuencias. En este segundo libro todavia se estan explorando personajes que 
-tendran una presencia permanente. Vemos la presencia de un personaje que solo aparece en esta entrega
-Lockhart. Conocer la casa de los Weasley. Voz. [ EDIT ]
+El trio protagonista es lo que mas se repite asi en estos libros asi como en todo el resto de la saga.
+ En este segundo libro todavia se estan explorando personajes que 
+tendran una presencia permanente. Tambien vemos la presencia de un personaje que solo aparece en esta entrega; Lockhart.
 
 
 ![](imagenes/palabrasmasfrecuentes4.png)
 
-Moody nuevo personaje. El regreso de Voldemnort marcado por la aparicion de la palabra Señor
+Moody nuevo personaje que se presenta y que participa en parte importante del libro. La inusual cantidad de veces que se repite la palabra Señor puede
+estar dado por el regreso de Voldemort y la relacion con Peter Pettigrew.
 
 
 ### Porcentaje de uso saga
@@ -291,22 +257,19 @@ Moody nuevo personaje. El regreso de Voldemnort marcado por la aparicion de la p
 
 ![](imagenes/palabrasmasfrecuentes5por.png)
 
-Gran presencia de profesora Umbridge y Sirius
-Voz
+Gran presencia de profesora Umbridge y la consolidación de la relacion de Harry con Sirius
 
 
 ![](imagenes/palabrasmasfrecuentes7por.png)
 
-El conflicto de las varitas tiene presencia en la septima entrega. voldemort
+El conflicto de las varitas y como Voldemort trata de obtener la varita de sauco tiene presencia en la septima entrega y se ve representado por la frecuencia de las palabras varita y Voldemort.
 
 
-
- 
 
 
 ### Asociaciones de palabras 
 
-Las palabras clave y sus asociaciones a traves de toda la saga.
+Las palabras clave y sus asociaciones a traves de toda la saga. Aplicare un indice de asocia
 ```
   findAssocs(tdm_8, terms = c("magia", "hogwarts", "harry", "ron", "dumbledore", "hermione", "hagrid", "snape", "voldemort", "malfoy", "potter", "varita"), corlimit = .18) 
   ```
@@ -314,6 +277,10 @@ Las palabras clave y sus asociaciones a traves de toda la saga.
 
 ![](imagenes/Asociaciones018.png)
 ![](imagenes/Asociaciones0182.png)
+
+Es interesante ver la diferencia entre palabras que no tienen muchas palabras asociadas y otras que si.  El trio protagonista por su caracter de protagonismo viven demasiadas situacions distintas,
+en muchos contextos, por eso no es raro ver que no tienen muchas correlaciones y las que tienen son muy debiles. Es importante recalcar que esta funcion ha sido aplicada a la saga completa por lo tanto tampoco 
+se esperan correlaciones muy fuertes entre palabras, pero si puede ser interesante de ver en casos particulares.
 
 
 
