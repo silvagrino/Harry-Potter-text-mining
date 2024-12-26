@@ -295,28 +295,29 @@ Selecciono palabras clave para ver sus asociaciones a través de toda la saga. A
 ![](imagenes/Asociaciones018.png)
 ![](imagenes/Asociaciones0182.png)
 
-* Agrupaciones Temáticas por Personajes y Conceptos:
+### Agrupaciones Temáticas por Personajes y Conceptos:
 
 Los términos asociados con cada personaje o concepto clave revelan el contexto y las relaciones narrativas predominantes. Por ejemplo:
+
 - Dumbledore se asocia con "director," lo que refuerza su rol administrativo y de liderazgo en Hogwarts.
 
 - Hagrid incluye términos como "cabaña," "guardabosques," y "criaturas," resaltando su vínculo con la naturaleza y las criaturas mágicas.
 
 - Snape se relaciona con términos como "profesor," "grasiento," y "despacho," lo que refleja descripciones físicas y su papel como docente.
 
-* Palabras Clave para Entender Conceptos Abstractos:
+### Palabras Clave para Entender Conceptos Abstractos:
 
 - Magia se vincula con "ministerio," "ministro," y "hechicería," lo que señala el marco institucional y regulador de la magia en el universo narrativo.
 
 - Varita se relaciona con términos técnicos como "saúco," "ollivander," y "núcleo," mostrando un interés en las propiedades mágicas y simbólicas de las varitas.
 
-* Relaciones Narrativas y Emocionales:
+### Relaciones Narrativas y Emocionales:
 
 - Los términos asociados a Voldemort como "mortífagos," "conectadas," y "morir" apuntan a sus conexiones oscuras y su centralidad como antagonista.
 
 - Harry y sus asociaciones ("vio") reflejan su papel de observador y protagonista en situaciones clave.
 
-* Diferencias en el Grado de Especificidad:
+### Diferencias en el Grado de Especificidad:
 
 - Algunos conceptos como "Hogwarts" están relacionados con términos más amplios ("colegio," "expreso"), mientras que otros, como "Malfoy," muestran interacciones específicas con aliados (e.g., "crabbe," "goyle").
 
@@ -369,15 +370,13 @@ Es importante compartir este código para que el usuario pueda interactuar con e
 
 El análisis de las burbujas temáticas muestra cómo los tópicos identificados se distribuyen de manera significativa en torno a eventos y personajes clave del libro:
 
-Tópico relacionado con la profesora Umbridge: Una de las burbujas más prominentes representa a la profesora Umbridge, cuyo papel central en este libro genera múltiples conexiones, como su influencia en Hogwarts y sus interacciones con los estudiantes. Su alta frecuencia en el texto refleja su antagonismo y relevancia en la narrativa.
+* Tópico relacionado con la profesora Umbridge: Una de las burbujas más prominentes representa a la profesora Umbridge, cuyo papel central en este libro genera múltiples conexiones, como su influencia en Hogwarts y sus interacciones con los estudiantes. Su alta frecuencia en el texto refleja su antagonismo y relevancia en la narrativa.
 
-Bosque prohibido: Muy cercana a la burbuja de Umbridge, otra representa eventos en el bosque prohibido. Esta proximidad semántica subraya cómo el bosque está relacionado con las acciones y decisiones de Umbridge, destacando su presencia en momentos clave, como el castigo de los estudiantes y la exploración de la resistencia contra su autoridad.
+* Bosque prohibido: Muy cercana a la burbuja de Umbridge, otra representa eventos en el bosque prohibido. Esta proximidad semántica subraya cómo el bosque está relacionado con las acciones y decisiones de Umbridge, destacando su presencia en momentos clave, como el castigo de los estudiantes y la exploración de la resistencia contra su autoridad.
 
-Arco narrativo previo al año escolar: Otro tópico destacado agrupa eventos previos al inicio del año escolar de Harry. Incluye interacciones con sus tíos, Sirius y las preparaciones antes de su llegada a Hogwarts. Este tópico captura la transición narrativa entre el mundo muggle y el mágico.
+* Arco narrativo previo al año escolar: Otro tópico destacado agrupa eventos previos al inicio del año escolar de Harry. Incluye interacciones con sus tíos, Sirius y las preparaciones antes de su llegada a Hogwarts. Este tópico captura la transición narrativa entre el mundo muggle y el mágico.
 
-La profecía y el Ministerio de Magia: Una burbuja importante refleja la profecía, Neville, y la visita al Ministerio de Magia. Este tópico abarca temas cruciales para el desarrollo de la trama, como el enfrentamiento final y la importancia de los personajes secundarios en la batalla.
-
-
+* La profecía y el Ministerio de Magia: Una burbuja importante refleja la profecía, Neville, y la visita al Ministerio de Magia. Este tópico abarca temas cruciales para el desarrollo de la trama, como el enfrentamiento final y la importancia de los personajes secundarios en la batalla.
 
 
 
@@ -402,8 +401,6 @@ Tema relacionado con Olivander, la varita de saúco y los horrocruxes. El resto 
 
 
 
-
-
 [ Necesito exportarlo para que se pueda interactuar con el LDA]
 
 
@@ -415,7 +412,9 @@ Tema relacionado con Olivander, la varita de saúco y los horrocruxes. El resto 
 ¿Qué espero obtener de este análisis?
 
 Distribución emocional: Cómo varían las emociones (miedo, tristeza, alegría, etc.) en cada libro.
+
 Tono general: Identificar si un libro es más positivo o negativo en términos emocionales.
+
 Evolución narrativa: Analizar cómo las emociones cambian a lo largo de la saga, reflejando el desarrollo de la trama.
 
   
@@ -568,17 +567,24 @@ La comparación revela cómo las emociones reflejan la construcción narrativa d
 # GPT
 
 Conclusión
-El análisis de la saga de Harry Potter mediante minería de texto y análisis de emociones revela patrones claros que reflejan tanto la evolución temática de los libros como la construcción emocional de sus personajes principales.
+El análisis de la saga de Harry Potter mediante minería de texto y análisis de emociones revela patrones claros que reflejan tanto la
+ evolución temática de los libros como la construcción emocional de sus personajes principales.
 
-Evolución Temática
+
+* Evolución Temática
+
 Libros Iniciales: Presentan un tono más positivo y de descubrimiento, con emociones predominantes como alegría y sorpresa. Esto es coherente con la introducción de los personajes y el mundo mágico.
 Libros Finales: Muestran un incremento en emociones negativas como miedo, tristeza e ira, reflejando los desafíos, pérdidas y conflictos que caracterizan el clímax de la historia.
-Personajes Principales
+
+* Personajes Principales
+
 Harry Potter: Un balance entre tristeza y miedo, pero con una constante presencia de confianza, reflejando su papel como héroe enfrentando adversidades.
 Hermione Granger: Predomina la confianza, lo que resalta su naturaleza racional y su rol como solucionadora en el trío protagonista.
 Voldemort: Definido por emociones negativas como ira y disgusto, representando su papel como el antagonista principal, con un énfasis en el miedo, tanto el que infunde como el que lo domina internamente.
 Dumbledore: Encarnación de confianza y esperanza, consistente con su papel como mentor y figura de liderazgo.
-Implicaciones
+
+* Implicaciones
+
 Estos hallazgos subrayan cómo las emociones y patrones textuales se utilizan narrativamente para construir personajes memorables y reforzar los temas centrales de la saga. El equilibrio entre emociones positivas y negativas a lo largo de los libros resalta el contraste entre los momentos oscuros y las resoluciones esperanzadoras que caracterizan a Harry Potter como una historia de perseverancia y redención.
 
 El análisis demuestra el valor de aplicar técnicas de minería de texto a obras literarias, no solo para desentrañar patrones ocultos, sino también para ofrecer una comprensión más profunda de las narrativas y sus impactos emocionales en los lectores.
