@@ -6,8 +6,7 @@
 ### Descripción del Proyecto
 
 Este proyecto realiza un análisis del texto completo de los siete libros de la saga Harry Potter mediante técnicas de minería de datos 
-y análisis de sentimientos. El objetivo principal es extraer patrones, identificar palabras clave, explorar características 
-lingüísticas y las emociones de personajes que permitan una comprensión más profunda de esta icónica obra literaria.
+y análisis de sentimientos. El objetivo principal es extraer patrones, identificar palabras clave y explorar las emociones de los personajes lo que permita una comprensión más profunda de esta icónica obra literaria.
 
 A través del uso de R y librerías especializadas, este análisis se desarrolla utilizando métodos de preprocesamiento de texto, 
 extracción de temas, análisis de redes semánticas y más.
@@ -16,7 +15,7 @@ extracción de temas, análisis de redes semánticas y más.
 
 * Procesar y limpiar los textos de los libros para obtener datos estructurados listos para su análisis.
 * Identificar palabras frecuentes, temas recurrentes y asociaciones de términos clave.
-* Visualizar patrones textuales mediante gráficos, nubes de palabras y diagramas.
+* Visualizar patrones textuales mediante gráficos y nubes de palabras.
 * Implementar análisis de sentimientos, modelado de tópicos y estudio de frecuencias.
 * Analizar la distribución de emociones entre los personajes principales y compararlas a lo largo de los diferentes libros de la saga.
 * Descubrir patrones emocionales que ofrezcan un entendimiento más profundo de los textos.
@@ -52,9 +51,10 @@ Preguntas que guiarán el análisis
 
 # 2. Preparar
 
+* Fuente de Datos: 8 Archivos PDF de la saga de libros Harry Potter.
+ Constituido por 7 archivos individuales para cada libro de la saga y un archivo que contiene la saga completa.
 
-Fuente de Datos: Archivos PDF de la saga de libros Harry Potter. Constituido por 8 archivos. Un archivo que contiene la saga completa y 7 archivos individuales para cada libro de la saga.
-Los datos de la saga fueron procesados desde texto en bruto (formato PDF/TXT) utilizando librerías como pdftools y tm.
+Los datos de la saga fueron procesados desde texto (formato PDF/TXT) utilizando librerías como pdftools y tm.
 
 ### Cantidad de palabras 
 ```
@@ -80,19 +80,19 @@ print(conteo_palabras)
 
 ### Para preparar los datos aplicaré un Enfoque ROCCC:
 
-Reliable/Confiablilidad: Famosa saga de libros escritos por la autora J. K. Rowling. 
+**R**eliable/Confiablilidad: Famosa saga de libros escritos por la autora J. K. Rowling. 
 
-Original/Originalidad: Datos originales obtenidos directamente de los libros
+**O**riginal/Originalidad: Datos originales obtenidos directamente de los libros
 
-Comprehensive/Integralidad: Texto extraído de los libros de Harry Potter, saga consistente en 7 libros 
+**C**omprehensive/Integralidad: Texto extraído de los libros de Harry Potter, saga consistente en 7 libros 
 
-Current/Actuales: Exitosa saga estrenada en 30 de junio de 1997 que finalizo con su último libro en 21 de julio de 2007.
+**C**urrent/Actuales: Exitosa saga estrenada en 30 de junio de 1997 que finalizo con su último libro en 21 de julio de 2007.
 
-Cited/Citación: [?????????] No es necesaria
+**C**ited/Citación: No es necesaria
 
 ### Herramientas:
 
-R para la minería de texto, análisis y visualización.
+* R para la minería de texto, análisis y visualización.
 Librerías principales: 
 
 library(ggplot2) 
@@ -101,12 +101,11 @@ library(tidyr)
 ibrary(wordcloud) 
 library(igraph) 
 
- Análisis avanzado: 
-ibrary(topicmodels) 
+* Análisis avanzado:
+
+library(topicmodels) 
 library(syuzhet) 
  
-
-###### ################################################################################################################################################
 
 # 3. Procesar
 
@@ -118,7 +117,7 @@ Eliminar puntuación y números.
 Remover palabras irrelevantes (stopwords) en español.
 Remover palabras y caracteres especiales. 
 
-Empiezo a procesar los archivos, incluyéndolos a una lista de PDF, para luego iterar sobre ella y crear el corpus para cada libro
+Comienzo a procesar los archivos, incluyéndolos a una lista PDF, para luego iterar sobre ella y crear el corpus para cada libro
 
 ```
     corpus <- Corpus(VectorSource(texto))
@@ -136,8 +135,7 @@ Empiezo a procesar los archivos, incluyéndolos a una lista de PDF, para luego i
     corpus <- tm_map(corpus, content_transformer(function(x) gsub("preguntó", "", x)))
 ```
 
-Limpio además signos especiales y palabras típicos de una narración como esta, las cuales se repetirán mucho, no quiero que estos signos desvíen mi análisis.
-
+Limpio además signos especiales y palabras típicos de una narración como esta, las cuales se repetirán mucho.
 
 # 4. Análisis
 
@@ -179,7 +177,7 @@ Esta frecuencia de términos para toda la saga me permite hacer varios análisis
 
 ## Frecuencia de palabras
 
-### Nube de palabras de la saga completa
+### Nube de palabras para saga completa
   
 ```
   wordcloud(words = corpus_filtrado_ordenado8$palabra, 
@@ -192,7 +190,7 @@ Esta frecuencia de términos para toda la saga me permite hacer varios análisis
 
 <img src="imagenes/nubedepalabrassaga.png" alt="Descripción de la imagen" width="550">
 
-Por supuesto, la palabra más repetida es "Harry Potter", protagonista de esta saga junto con Ron y Hermione, el trío protagonista y los demás personajes secundarios presentes en toda la saga.
+Como cabria esperar, la palabra más repetida es "Harry Potter", protagonista de esta saga junto con Ron y Hermione, el trío protagonista y los demás personajes secundarios presentes en toda la saga.
 
 
 ## Nube de palabras para libro 1 y 3
@@ -202,15 +200,34 @@ Por supuesto, la palabra más repetida es "Harry Potter", protagonista de esta s
 ![](imagenes/nubepalabras1.png)   ![](imagenes/nubepalabras3.png)
 
 
-El Libro 1 introduce a los personajes, el entorno escolar (Hogwarts) y elementos básicos de la magia, con un tono de descubrimiento y asombro.
-El Libro 3 presenta una narrativa más compleja y madura, con nuevos personajes (Lupin, Black, Sirius) y temas oscuros como los dementores y las traiciones (Scabbers y Pettigrew).
+* Harry Potter y la piedra filosofal
 
-Si bien Harry sigue siendo el centro de la historia, el Libro 3 amplía el protagonismo de otros personajes clave como Lupin y Sirius Black.
+ Introduce a los personajes, el entorno escolar (Hogwarts) y elementos básicos de la magia, con un tono de descubrimiento y asombro.
+
+* Harry Potter y el prisionero de Azkaban
+
+Presenta una narrativa más compleja y madura respecto a sus antecesores, con nuevos personajes (Lupin, Black, Sirius) y temas oscuros como los dementores y las traiciones (Scabbers y Pettigrew).
+
+Si bien Harry sigue siendo el centro de la historia, este 3er libro amplía el protagonismo de otros personajes clave como Lupin y Sirius Black.
 
 
-## Gráficas de frecuencia
+* Harry Potter y la piedra filosofal
+
+* Harry Potter y la cámara secreta
+
+* Harry Potter y el prisionero de Azkaban
+
+* Harry Potter y el cáliz de fuego
+
+* Harry Potter y la Orden del Fénix
+
+* Harry Potter y el misterio del príncipe
+
+* Harry Potter y las reliquias de la muerte
+
+
+## Gráficas de frecuencia libro 2 y 4
   
-# Número de usos
 
 ```
   corpus_filtrado_ordenado8[1:13, ] %>%
@@ -221,20 +238,23 @@ Si bien Harry sigue siendo el centro de la historia, el Libro 3 amplía el prota
     labs(title = "Trece palabras más frecuentes",  x = "Palabras", y = "Número de usos")
 ```  
 
-![](imagenes/palabrasfrecuentessaga.png)
 
-### Libro 2 y 4
 
-El trío protagonista es lo que más se repite así en estos libros, así como en todo el resto de la saga.
- En este segundo libro todavía se están explorando personajes que  tendrán una presencia permanente. También vemos la presencia de un personaje que solo aparece en esta entrega; Lockhart.
+* Harry Potter y la cámara secreta
 
+![](imagenes/palabrasmasfrecuentes2.png)
+
+El trío protagonista es lo que más se repite en este libro, así como en todo el resto de la saga.
+ En este segundo libro todavía se están explorando personajes que tendrán una presencia permanente. También vemos la presencia de un personaje que solo aparece en esta entrega; Lockhart.
+
+* Harry Potter y el cáliz de fuego
 
 ![](imagenes/palabrasmasfrecuentes4.png)
 
 Moody nuevo personaje que se presenta y que participa en parte importante del libro. La inusual cantidad de veces que se repite la palabra Señor puede
 estar dado por el regreso de Voldemort y la relación con Peter Pettigrew.
 
-### Porcentaje de uso saga
+## Porcentaje de uso de palabras libros 5 y 7
 
 ```
   corpus_filtrado_ordenado5 %>%
@@ -248,12 +268,13 @@ estar dado por el regreso de Voldemort y la relación con Peter Pettigrew.
 ```
 
 
-### Libros 5 y 7
-
+* Harry Potter y la Orden del Fénix
 
 ![](imagenes/palabrasmasfrecuentes5por.png)
 Gran presencia de profesora Umbridge y la consolidación de la relación de Harry con Sirius
 
+
+* Harry Potter y las reliquias de la muerte
 
 ![](imagenes/palabrasmasfrecuentes7por.png)
 
@@ -262,7 +283,7 @@ El conflicto de las varitas y como Voldemort trata de obtener la varita de saúc
 
 
 
-### Asociaciones de palabras 
+## Asociaciones de palabras 
 
 Las palabras clave y sus asociaciones a través de toda la saga. Aplicaré un índice de asociación
 ```
