@@ -283,9 +283,10 @@ El conflicto de las varitas y como Voldemort trata de obtener la varita de saúc
 
 
 
-## Asociaciones de palabras 
+## Asociaciones de palabras saga
 
-Las palabras clave y sus asociaciones a través de toda la saga. Aplicaré un índice de asociación
+Selecciono palabras clave para ver sus asociaciones a través de toda la saga. Aplicaré un índice de asociación de 0.18
+
 ```
   findAssocs(tdm_8, terms = c("magia", "hogwarts", "harry", "ron", "dumbledore", "hermione", "hagrid", "snape", "voldemort", "malfoy", "potter", "varita"), corlimit = .18) 
   ```
@@ -294,9 +295,30 @@ Las palabras clave y sus asociaciones a través de toda la saga. Aplicaré un í
 ![](imagenes/Asociaciones018.png)
 ![](imagenes/Asociaciones0182.png)
 
-Es interesante ver la diferencia entre palabras que no tienen muchas palabras asociadas y otras que sí.  El trío protagonista, por su carácter de protagonismo, viven demasiadas situaciones distintas,
-en muchos contextos, por eso no es raro ver que no tienen muchas correlaciones y las que tienen son muy débiles. Es importante recalcar que esta función ha sido aplicada a la saga completa, por lo tanto, tampoco 
-se esperan correlaciones muy fuertes entre palabras, pero sí puede ser interesante de ver en casos particulares.
+* Agrupaciones Temáticas por Personajes y Conceptos:
+
+Los términos asociados con cada personaje o concepto clave revelan el contexto y las relaciones narrativas predominantes. Por ejemplo:
+- Dumbledore se asocia con "director," lo que refuerza su rol administrativo y de liderazgo en Hogwarts.
+
+- Hagrid incluye términos como "cabaña," "guardabosques," y "criaturas," resaltando su vínculo con la naturaleza y las criaturas mágicas.
+
+- Snape se relaciona con términos como "profesor," "grasiento," y "despacho," lo que refleja descripciones físicas y su papel como docente.
+
+* Palabras Clave para Entender Conceptos Abstractos:
+
+- Magia se vincula con "ministerio," "ministro," y "hechicería," lo que señala el marco institucional y regulador de la magia en el universo narrativo.
+
+- Varita se relaciona con términos técnicos como "saúco," "ollivander," y "núcleo," mostrando un interés en las propiedades mágicas y simbólicas de las varitas.
+
+* Relaciones Narrativas y Emocionales:
+
+- Los términos asociados a Voldemort como "mortífagos," "conectadas," y "morir" apuntan a sus conexiones oscuras y su centralidad como antagonista.
+
+- Harry y sus asociaciones ("vio") reflejan su papel de observador y protagonista en situaciones clave.
+
+* Diferencias en el Grado de Especificidad:
+
+- Algunos conceptos como "Hogwarts" están relacionados con términos más amplios ("colegio," "expreso"), mientras que otros, como "Malfoy," muestran interacciones específicas con aliados (e.g., "crabbe," "goyle").
 
 
 
@@ -305,7 +327,7 @@ se esperan correlaciones muy fuertes entre palabras, pero sí puede ser interesa
   ### Modelado de Tópicos
   
  Para este modelado de tópicos haré uso de LDA (Latent Dirichlet Allocation) para identificar temas latentes.
-Es importante compartir este código para que el usuario pueda interactuar con este gráfico y explorar las múltiples opciones que ofrece para las relaciones de esa red semántica.
+Es importante compartir este código para que el usuario pueda interactuar con este gráfico y explorar las múltiples opciones que ofrece para las relaciones de esta red semántica.
 
  ```
   # Imprimir los temas por libro
@@ -345,10 +367,15 @@ Es importante compartir este código para que el usuario pueda interactuar con e
 
 ![](imagenes/gifLDA/LDAlibro5.gif)
 
-Las burbujas de tópicos varían entre las relacionadas con la profesora Umbridge que tiene gran presencia en el libro. Muy cerca hay otra burbuja que representa la visita al bosque prohibido que también tiene mucho que ver con la profesora Umbrdige.
-Otra es parte de lo que pasa antes de que inicio el año escolar de Harry, teniendo que ver con sus tíos, Sirius y todo el arco antes del comienzo del año escolar dentro de Hogwarts.
-También se presenta una burbuja que representa todo lo relacionado con la profecía, Neville y la visita al ministerio de Magia.
-Como en cada uno de los libros, el nombre del trío protagonista se repite.
+El análisis de las burbujas temáticas muestra cómo los tópicos identificados se distribuyen de manera significativa en torno a eventos y personajes clave del libro:
+
+Tópico relacionado con la profesora Umbridge: Una de las burbujas más prominentes representa a la profesora Umbridge, cuyo papel central en este libro genera múltiples conexiones, como su influencia en Hogwarts y sus interacciones con los estudiantes. Su alta frecuencia en el texto refleja su antagonismo y relevancia en la narrativa.
+
+Bosque prohibido: Muy cercana a la burbuja de Umbridge, otra representa eventos en el bosque prohibido. Esta proximidad semántica subraya cómo el bosque está relacionado con las acciones y decisiones de Umbridge, destacando su presencia en momentos clave, como el castigo de los estudiantes y la exploración de la resistencia contra su autoridad.
+
+Arco narrativo previo al año escolar: Otro tópico destacado agrupa eventos previos al inicio del año escolar de Harry. Incluye interacciones con sus tíos, Sirius y las preparaciones antes de su llegada a Hogwarts. Este tópico captura la transición narrativa entre el mundo muggle y el mágico.
+
+La profecía y el Ministerio de Magia: Una burbuja importante refleja la profecía, Neville, y la visita al Ministerio de Magia. Este tópico abarca temas cruciales para el desarrollo de la trama, como el enfrentamiento final y la importancia de los personajes secundarios en la batalla.
 
 
 
@@ -386,6 +413,7 @@ Tema relacionado con Olivander, la varita de saúco y los horrocruxes. El resto 
 ### Personajes principales, emociones y polaridades asociadas.
 
 ¿Qué espero obtener de este análisis?
+
 Distribución emocional: Cómo varían las emociones (miedo, tristeza, alegría, etc.) en cada libro.
 Tono general: Identificar si un libro es más positivo o negativo en términos emocionales.
 Evolución narrativa: Analizar cómo las emociones cambian a lo largo de la saga, reflejando el desarrollo de la trama.
@@ -413,7 +441,7 @@ El paquete syuzhet para análisis de sentimientos incluye el lexicón NRC, que e
 
 ![](imagenes/comparacionemocionessaga.png)
 
-Se ve una distribución de emociones relativamente equilibrada, aunque se tiende a tener más emociones negativas, probablemente representada en que los libros que presentan temáticas más oscuras y relacionadas con la muerte son libros más largos.
+Se ve una distribución de emociones relativamente equilibrada, pero se tiende a tener más emociones negativas, probablemente representadas en los libros que presentan temáticas más oscuras y relacionadas con la muerte que resultan ser los libros más largos de la saga.
 
 ### Comparación entre libros de la saga
 
@@ -437,10 +465,10 @@ La visualización revela que un fuerte enfoque en confianza (trust) y tristeza (
 ```
 
 ![](imagenes/polaridadporlibro.png)
+* "Libro  8" representa la saga completa.
 
 En este gráfico se puede ver de manera más explícita la diferencia entre de polaridades entre los diferentes libros.
-Los 3 primeros libros son los más positivos que gradualmente se van haciendo más oscuros. En el 4.º la diferencia es mucha, esto tiene sentido al considerar que en este libro Voldemort vuelve y se presenta la primera muerte significativa que Harry presencia, la muerte de Cedric Diggory.
-* "Libro  8" representa la saga completa.
+Los 3 primeros libros son los más positivos de la saga, la cual gradualmente se van haciendo más oscura. En el 4.º la diferencia es mucha, esto tiene sentido al considerar que en este libro Voldemort vuelve y se presenta la primera muerte significativa que Harry presencia, la muerte de Cedric Diggory.
 
 
 ```
@@ -458,21 +486,19 @@ ggplot(polaridad_libros, aes(x = Libro, y = Frecuencia, fill = Polaridad)) +
        y = "Frecuencia de polaridad") +
   theme_minimal()
 ```
+
 ![](imagenes/polaridademocionallibro.png)
-
-El 5.º libro se presenta como uno mucho más positivo, no hay muertes y Harry toma más autonomía y liderazgo al crear la Orden del Fénix. El 6.º libro vuelve a tener una polaridad más negativa con respecto a su antecesor, pero aun así no tanto como el 4.º. Este libro presenta temáticas más profundas relacionadas con el pasado de Voldemort, sus recuerdos, los Horrocruxes y la muerte de Dumbledore.
-Finalmente, el 7to libro es el libro con la polaridad más negativa de la saga, esto debido a que se presentan situaciones cercanas a la muerte, temas relacionados con esta y el sacrificio de parte de Harry, la destrucción de los horrocruxes, y finalmente la ballata de Hogwarts la cual presenta la mayor cantidad de muertes.
-
-La consistencia de estas emociones refleja un patrón recurrente en la saga de Harry Potter, donde momentos oscuros se equilibran con esperanza y momentos alegres.
 * El "libro 8" representa la saga completa
 
-[ EDIT ]
+El 5.º libro se presenta como uno mucho más positivo, no hay muertes y Harry toma más autonomía y liderazgo al crear la Orden del Fénix. El 6.º libro vuelve a tener una polaridad más negativa con respecto a su antecesor, aunque no tanto como el 4.º. Este libro presenta temáticas más profundas relacionadas con el pasado de Voldemort, sus recuerdos, los Horrocruxes y la muerte de Dumbledore.
+Finalmente, el 7to libro es el libro con la polaridad más negativa de la saga, esto debido a que se presentan situaciones relacionadas a la muerte, el sacrificio de parte de Harry, la destrucción de los horrocruxes, y finalmente la ballata de Hogwarts la cual presenta la mayor cantidad de muertes.
 
+La consistencia de estas emociones refleja un patrón recurrente en la saga de Harry Potter, donde momentos oscuros se equilibran con esperanza y momentos alegres.
 
 
 ## Emociones por personajes 
 
-### Grafico de pizza
+### Grafico circular
 
 ```
  ggplot(datos_harry, aes(x = "", y = Frecuencia, fill = Emocion)) +
@@ -560,6 +586,19 @@ El análisis demuestra el valor de aplicar técnicas de minería de texto a obra
 
 
 ##########################333
+
+###### ASOCIACIONES DE Palabras
+
+Conclusión
+El análisis revela cómo las palabras en el corpus de Harry Potter se organizan semánticamente para reflejar roles, relaciones y temáticas específicas. Estas asociaciones no solo muestran las conexiones directas entre personajes y conceptos, sino que también permiten identificar patrones narrativos y dinámicas clave. Estos hallazgos pueden ser utilizados para explorar cómo se desarrolla la narrativa, qué términos dominan ciertas temáticas, y cómo los personajes y conceptos están interrelacionados a lo largo de la saga.
+
+
+#################
+
+
+
+
+
 
 Resultados
 Los resultados obtenidos destacan diferencias significativas en la distribución de emociones:
