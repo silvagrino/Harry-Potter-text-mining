@@ -516,10 +516,29 @@ Voldemort, como villano principal, está definido por emociones negativas como a
 La comparación revela cómo las emociones reflejan la construcción narrativa de cada personaje, alineando sus emociones dominantes con sus arcos de desarrollo en la historia.
 
 
-# 5. Compartir
+# 5. Conclusión
+
+# GPT
+
+Conclusión
+El análisis de la saga de Harry Potter mediante minería de texto y análisis de emociones revela patrones claros que reflejan tanto la evolución temática de los libros como la construcción emocional de sus personajes principales.
+
+Evolución Temática
+Libros Iniciales: Presentan un tono más positivo y de descubrimiento, con emociones predominantes como alegría y sorpresa. Esto es coherente con la introducción de los personajes y el mundo mágico.
+Libros Finales: Muestran un incremento en emociones negativas como miedo, tristeza e ira, reflejando los desafíos, pérdidas y conflictos que caracterizan el clímax de la historia.
+Personajes Principales
+Harry Potter: Un balance entre tristeza y miedo, pero con una constante presencia de confianza, reflejando su papel como héroe enfrentando adversidades.
+Hermione Granger: Predomina la confianza, lo que resalta su naturaleza racional y su rol como solucionadora en el trío protagonista.
+Voldemort: Definido por emociones negativas como ira y disgusto, representando su papel como el antagonista principal, con un énfasis en el miedo, tanto el que infunde como el que lo domina internamente.
+Dumbledore: Encarnación de confianza y esperanza, consistente con su papel como mentor y figura de liderazgo.
+Implicaciones
+Estos hallazgos subrayan cómo las emociones y patrones textuales se utilizan narrativamente para construir personajes memorables y reforzar los temas centrales de la saga. El equilibrio entre emociones positivas y negativas a lo largo de los libros resalta el contraste entre los momentos oscuros y las resoluciones esperanzadoras que caracterizan a Harry Potter como una historia de perseverancia y redención.
+
+El análisis demuestra el valor de aplicar técnicas de minería de texto a obras literarias, no solo para desentrañar patrones ocultos, sino también para ofrecer una comprensión más profunda de las narrativas y sus impactos emocionales en los lectores.
 
 
 
+##########################333
 
 Resultados
 Los resultados obtenidos destacan diferencias significativas en la distribución de emociones:
