@@ -564,65 +564,36 @@ La comparación revela cómo las emociones reflejan la construcción narrativa d
 
 # 5. Conclusión
 
-# GPT
 
-Conclusión
 El análisis de la saga de Harry Potter mediante minería de texto y análisis de emociones revela patrones claros que reflejan tanto la
  evolución temática de los libros como la construcción emocional de sus personajes principales.
 
-
-* Evolución Temática
-
-Libros Iniciales: Presentan un tono más positivo y de descubrimiento, con emociones predominantes como alegría y sorpresa. Esto es coherente con la introducción de los personajes y el mundo mágico.
-Libros Finales: Muestran un incremento en emociones negativas como miedo, tristeza e ira, reflejando los desafíos, pérdidas y conflictos que caracterizan el clímax de la historia.
-
-* Personajes Principales
-
-Harry Potter: Un balance entre tristeza y miedo, pero con una constante presencia de confianza, reflejando su papel como héroe enfrentando adversidades.
-Hermione Granger: Predomina la confianza, lo que resalta su naturaleza racional y su rol como solucionadora en el trío protagonista.
-Voldemort: Definido por emociones negativas como ira y disgusto, representando su papel como el antagonista principal, con un énfasis en el miedo, tanto el que infunde como el que lo domina internamente.
-Dumbledore: Encarnación de confianza y esperanza, consistente con su papel como mentor y figura de liderazgo.
-
-* Implicaciones
-
-Estos hallazgos subrayan cómo las emociones y patrones textuales se utilizan narrativamente para construir personajes memorables y reforzar los temas centrales de la saga. El equilibrio entre emociones positivas y negativas a lo largo de los libros resalta el contraste entre los momentos oscuros y las resoluciones esperanzadoras que caracterizan a Harry Potter como una historia de perseverancia y redención.
-
-El análisis demuestra el valor de aplicar técnicas de minería de texto a obras literarias, no solo para desentrañar patrones ocultos, sino también para ofrecer una comprensión más profunda de las narrativas y sus impactos emocionales en los lectores.
+Las asociaciones no solo muestran las conexiones directas entre personajes y conceptos, sino que también permiten identificar patrones narrativos
+ y dinámicas clave. Estos hallazgos pueden ser utilizados para explorar cómo se desarrolla la narrativa, qué términos dominan ciertas temáticas,
+  y cómo los personajes y conceptos están interrelacionados a lo largo de la saga.
 
 
+### Evolución Temática
 
-##########################333
+* Libros Iniciales: Presentan un tono más positivo y de descubrimiento, con emociones predominantes como alegría y sorpresa. Esto es
+ coherente con la introducción de los personajes y el mundo mágico.
+* Libros Finales: Muestran un incremento en emociones negativas como miedo, tristeza e ira, reflejando los desafíos, pérdidas y conflictos
+ que caracterizan el clímax de la historia.
 
-###### ASOCIACIONES DE Palabras
+### Personajes Principales
 
-Conclusión
-El análisis revela cómo las palabras en el corpus de Harry Potter se organizan semánticamente para reflejar roles, relaciones y temáticas específicas. Estas asociaciones no solo muestran las conexiones directas entre personajes y conceptos, sino que también permiten identificar patrones narrativos y dinámicas clave. Estos hallazgos pueden ser utilizados para explorar cómo se desarrolla la narrativa, qué términos dominan ciertas temáticas, y cómo los personajes y conceptos están interrelacionados a lo largo de la saga.
+* Harry Potter: Un balance entre tristeza y miedo, pero con una constante presencia de confianza, reflejando su papel como héroe enfrentando adversidades.
+* Hermione Granger: Predomina la confianza, lo que resalta su naturaleza racional y su rol como solucionadora en el trío protagonista.
+* Voldemort: Definido por emociones negativas como ira y disgusto, representando su papel como el antagonista principal, con un énfasis en el miedo, tanto el que infunde como el que lo domina internamente.
+* Dumbledore: Encarnación de confianza y esperanza, consistente con su papel como mentor y figura de liderazgo.
 
+### Implicaciones
 
-#################
+Estos hallazgos exponen cómo las emociones y patrones textuales se utilizan narrativamente para construir personajes memorables y reforzar
+ los temas centrales de la saga. El equilibrio entre emociones positivas y negativas a lo largo de los libros resalta el contraste entre los 
+ momentos oscuros y las resoluciones esperanzadoras que caracterizan a Harry Potter como una historia de perseverancia y redención.
 
-
-
-
-
-
-Resultados
-Los resultados obtenidos destacan diferencias significativas en la distribución de emociones:
-
-Personajes principales:
-
-Harry Potter: Dominado por emociones de tristeza y miedo.
-Hermione Granger: Mayor proporción de alegría y confianza.
-Voldemort: Predominan emociones negativas como ira y disgusto.
-Libros:
-
-Emociones más positivas en los libros iniciales.
-Aumento de emociones negativas como miedo y tristeza hacia el final de la saga.
-
-
-Las emociones reflejan la evolución temática de la saga.
 Los personajes principales tienen perfiles emocionales únicos que contribuyen a su caracterización y gradual complejidad.
 
-
-
-# 6. Actuar
+El análisis demuestra el valor de aplicar técnicas de minería de texto a obras literarias, no solo para desentrañar patrones ocultos,
+ sino también para ofrecer una comprensión más profunda de las narrativas y sus impactos emocionales en los lectores.
