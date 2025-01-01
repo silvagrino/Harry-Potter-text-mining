@@ -597,3 +597,8 @@ Los personajes principales tienen perfiles emocionales únicos que contribuyen a
 
 El análisis también demuestra el valor de aplicar técnicas de minería de texto a obras literarias, no solo para desentrañar patrones ocultos,
  sino también para ofrecer una comprensión más profunda de las narrativas y sus impactos emocionales en los lectores.
+
+# Donde pongo esto 
+
+  Uso de LDA (Latent Dirichlet Allocation) para identificar temas latentes.
+  Construcción de grafos basados en la co-ocurrencia de palabras clave.
