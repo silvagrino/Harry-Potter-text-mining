@@ -1,6 +1,6 @@
-
-
 # 📚 Análisis de Texto de la Saga de Harry Potter 🧙‍♂️
+
+![](imagenes/portadasnuevas.jpg)
 
 
 ### Descripción del Proyecto
@@ -595,3 +595,4 @@ Los personajes principales tienen perfiles emocionales únicos que contribuyen a
 El análisis también demuestra el valor de aplicar técnicas de minería de texto a obras literarias, no solo para desentrañar patrones ocultos,
  sino también para ofrecer una comprensión más profunda de las narrativas y sus impactos emocionales en los lectores.
 
+![](imagenes/portadasbloomsbury.jpg)
