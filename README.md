@@ -211,21 +211,6 @@ Presenta una narrativa más compleja y madura respecto a sus antecesores, con nu
 Si bien Harry sigue siendo el centro de la historia, este 3er libro amplía el protagonismo de otros personajes clave como Lupin y Sirius Black.
 
 
-* Harry Potter y la piedra filosofal
-
-* Harry Potter y la cámara secreta
-
-* Harry Potter y el prisionero de Azkaban
-
-* Harry Potter y el cáliz de fuego
-
-* Harry Potter y la Orden del Fénix
-
-* Harry Potter y el misterio del príncipe
-
-* Harry Potter y las reliquias de la muerte
-
-
 ## Gráficas de frecuencia libro 2 y 4
   
 
@@ -384,9 +369,24 @@ El análisis de las burbujas temáticas muestra cómo los tópicos identificados
 
 ![](imagenes/gifLDA/LDAlibro6.gif)
 
-Una burbuja apartada correspondiente a la familia Gaunt y los recuerdos de Voldemort. Harry y su relación con él
-profesor Slughorn. Otra de la cabaña de Hagrid y Aragog. Dos burbujas muy juntas correspondientes a la sala de los menesteres, dobby y Malfoy. Narcisa y los Weasley.
+* Familia Gaunt y recuerdos de Voldemort:
+La burbuja apartada representa los recuerdos de Voldemort relacionados con su ascendencia y la familia Gaunt. Este tópico es clave para comprender el origen de los Horrocruxes y la conexión entre Voldemort y su linaje.
 
+* Relación entre Harry y Slughorn:
+Un tópico importante está dedicado a la relación entre Harry y el profesor Slughorn. Este abarca las interacciones en torno a la obtención del recuerdo crítico sobre el Horrocrux y la importancia de las pociones, incluyendo el uso del libro de texto del "Príncipe Mestizo".
+
+* La cabaña de Hagrid y Aragog:
+Otro tópico refleja los eventos relacionados con Hagrid, la muerte de Aragog y el funeral de la acromántula, que se conecta directamente con la obtención de información clave de Slughorn debido a la influencia del Felix Felicis.
+
+* Sala de los Menesteres, Dobby y Malfoy:
+Dos burbujas muy cercanas reflejan eventos interrelacionados:
+
+- La Sala de los Menesteres, utilizada por Malfoy para preparar el armario evanescente y facilitar la entrada de los mortífagos a Hogwarts.
+- La participación de Dobby, que ayuda a Harry a investigar las actividades de Malfoy.
+Esta proximidad refleja la tensión y el espionaje en torno a las acciones de Malfoy durante el año escolar.
+
+* Narcisa Malfoy y los Weasley:
+Otro tópico representa a Narcisa Malfoy, especialmente su juramento inquebrantable con Snape, y los conflictos entre los Malfoy y los Weasley. La presencia de estos personajes destaca la rivalidad familiar y los dilemas éticos que afectan los eventos del libro.
 
 
 
@@ -398,6 +398,21 @@ profesor Slughorn. Otra de la cabaña de Hagrid y Aragog. Dos burbujas muy junta
 Una burbuja enlaza temas como el valle de Godric y Dumbledore.
 Temas relacionados con variedad de nombres que se presentan hasta que Harry parte de casa de sus tíos.
 Tema relacionado con Olivander, la varita de saúco y los horrocruxes. El resto son 2 burbujas variadas que tienen que ver con kreacher, Regulus, prisioneros, iglesia, estatuas y paredes.
+
+* Godric's Hollow y Dumbledore:
+Una burbuja temática engloba elementos relacionados con el Valle de Godric, la historia de Dumbledore y los secretos revelados sobre su pasado. Este tópico destaca la exploración de Harry y Hermione en busca de pistas sobre los Horrocruxes y los momentos clave en este lugar, incluyendo la visita a la tumba de los Potter.
+
+* Inicio del Viaje de Harry:
+Otro tópico captura eventos y personajes que aparecen antes de que Harry abandone la casa de los Dursley, incluyendo la aparición de personajes clave como Kingsley y los Weasley, así como los preparativos para la boda de Bill y Fleur. Estos eventos sientan las bases de la narrativa que sigue.
+
+* Ollivander, la Varita de Saúco y los Horrocruxes:
+Este tema se centra en la importancia de Ollivander, la Varita de Saúco y la búsqueda de los Horrocruxes. La conexión con Grindelwald, Bellatrix y Voldemort refleja la búsqueda de poder y los enfrentamientos cruciales en la historia.
+
+* Kreacher, Regulus y la Resistencia:
+Una de las burbujas variadas abarca la historia de Kreacher, el sacrificio de Regulus Black, y el papel del elfo doméstico en la recuperación del relicario Horrocrux. También se vincula con elementos de resistencia en contra del régimen de Voldemort.
+
+* Estatuas, Paredes y Prisioneros:
+Otra burbuja temática refleja los eventos en la iglesia, las estatuas y las paredes, posiblemente haciendo referencia al escape del Ministerio de Magia y las condiciones de los prisioneros en la mansión Malfoy. Este tema incluye momentos de acción y rescate.
 
 
 
