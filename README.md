@@ -88,7 +88,7 @@ print(conteo_palabras)
 
 **C**urrent/Actuales: Exitosa saga estrenada en 30 de junio de 1997 que finalizo con su último libro en 21 de julio de 2007.
 
-**C**ited/Citación: No es necesaria
+**C**ited/Citación: -
 
 ### Herramientas:
 
@@ -108,8 +108,6 @@ library(syuzhet)
  
 
 # 3. Procesar
-
-Preprocesamiento de Texto:
 
 Creo un corpus para limpiar los textos, entre los cambios que aplicaré al texto original se encuentran:
 Convertir a minúsculas.
@@ -172,7 +170,7 @@ Para ello creo un bucle para procesar cada archivo, así no tendré que repetir 
   }
 ```
 
-Esta frecuencia de términos para toda la saga me permite hacer varios análisis relacionados con la frecuencia de palabras
+Esta frecuencia de términos para toda la saga me permite hacer varios graficos los cuales aplicaré para libros especificos dependiendo del tipo.
 
 
 ## Frecuencia de palabras
@@ -190,7 +188,8 @@ Esta frecuencia de términos para toda la saga me permite hacer varios análisis
 
 <img src="imagenes/nubedepalabrassaga.png" alt="Descripción de la imagen" width="550">
 
-Como cabria esperar, la palabra más repetida es "Harry Potter", protagonista de esta saga junto con Ron y Hermione, el trío protagonista y los demás personajes secundarios presentes en toda la saga.
+* Como es de esperar, la palabra más repetida es "Harry Potter", protagonista de esta saga junto con Ron y Hermione, el trío protagonista y los demás personajes secundarios presentes en toda la saga.
+Este será una constante dado que en todos los libros la presencia del trio protagonista es muy fuerte. Este es una saga de literatura juvenil en la cual no se desarrollan tanto personajes secundarios.
 
 
 ## Nube de palabras para libro 1 y 3
@@ -208,7 +207,7 @@ Como cabria esperar, la palabra más repetida es "Harry Potter", protagonista de
 
 Presenta una narrativa más compleja y madura respecto a sus antecesores, con nuevos personajes (Lupin, Black, Sirius) y temas oscuros como los dementores y las traiciones (Scabbers y Pettigrew).
 
-Si bien Harry sigue siendo el centro de la historia, este 3er libro amplía el protagonismo de otros personajes clave como Lupin y Sirius Black.
+Si bien los personajes protagonistas son el centro de la historia, este 3er libro amplía el protagonismo de otros personajes clave como Lupin y Sirius Black.
 
 
 ## Gráficas de frecuencia libro 2 y 4
@@ -229,14 +228,21 @@ Si bien Harry sigue siendo el centro de la historia, este 3er libro amplía el p
 
 ![](imagenes/palabrasmasfrecuentes2.png)
 
-El trío protagonista es lo que más se repite en este libro, así como en todo el resto de la saga.
- En este segundo libro todavía se están explorando personajes que tendrán una presencia permanente. También vemos la presencia de un personaje que solo aparece en esta entrega; Lockhart.
+
+En este segundo libro todavía se están explorando personajes que tendrán una presencia permanente..
+
+Palabras como "ojos" (162) y "voz" (187) podrían estar relacionadas con descripciones visuales y auditivas, reforzando el estilo narrativo del autor.
+
+La aparición del término "señor" (174) podría estar relacionada con "el Señor Tenebroso" (Voldemort), pero requeriría más contexto para confirmarlo.
+
+También vemos la presencia de un personaje que solo aparece en esta entrega; "Lockhart" (231) destaca como un personaje relevante en este libro, ya que es introducido como el profesor de Defensa Contra las Artes Oscuras en esta entrega.
+
 
 * Harry Potter y el cáliz de fuego
 
 ![](imagenes/palabrasmasfrecuentes4.png)
 
-Moody nuevo personaje que se presenta y que participa en parte importante del libro. La inusual cantidad de veces que se repite la palabra Señor puede
+Moody destaca como el nuevo personaje que se presenta y que participa en parte importante de la historia de libro. La inusual cantidad de veces que se repite la palabra Señor puede
 estar dado por el regreso de Voldemort y la relación con Peter Pettigrew.
 
 ## Porcentaje de uso de palabras libros 5 y 7
@@ -256,7 +262,9 @@ estar dado por el regreso de Voldemort y la relación con Peter Pettigrew.
 * Harry Potter y la Orden del Fénix
 
 ![](imagenes/palabrasmasfrecuentes5por.png)
-Gran presencia de profesora Umbridge y la consolidación de la relación de Harry con Sirius
+
+
+Gran presencia de profesora Umbridge y la consolidación de la relación de Harry con Sirius. Analizaré en mas profundidad con modelado de tópicos posterior.
 
 
 * Harry Potter y las reliquias de la muerte
@@ -395,9 +403,6 @@ Otro tópico representa a Narcisa Malfoy, especialmente su juramento inquebranta
 
 ![](imagenes/gifLDA/LDAlibro7.gif)
 
-Una burbuja enlaza temas como el valle de Godric y Dumbledore.
-Temas relacionados con variedad de nombres que se presentan hasta que Harry parte de casa de sus tíos.
-Tema relacionado con Olivander, la varita de saúco y los horrocruxes. El resto son 2 burbujas variadas que tienen que ver con kreacher, Regulus, prisioneros, iglesia, estatuas y paredes.
 
 * Godric's Hollow y Dumbledore:
 Una burbuja temática engloba elementos relacionados con el Valle de Godric, la historia de Dumbledore y los secretos revelados sobre su pasado. Este tópico destaca la exploración de Harry y Hermione en busca de pistas sobre los Horrocruxes y los momentos clave en este lugar, incluyendo la visita a la tumba de los Potter.
@@ -437,7 +442,9 @@ install.packages("syuzhet")
 library(syuzhet)
 ```
 
+
 El paquete syuzhet para análisis de sentimientos incluye el lexicón NRC, que evalúa 8 emociones (alegría, tristeza, miedo, etc.) y la polaridad (positivo/negativo).
+
 
 ```
   resultados_emociones <- lapply(texto_libros, function(texto) {
@@ -452,14 +459,13 @@ El paquete syuzhet para análisis de sentimientos incluye el lexicón NRC, que e
 
 ![](imagenes/comparacionemocionessaga.png)
 
-Se ve una distribución de emociones relativamente equilibrada, pero se tiende a tener más emociones negativas, probablemente representadas en los libros que presentan temáticas más oscuras y relacionadas con la muerte que resultan ser los libros más largos de la saga.
+* Se ve una distribución de emociones relativamente equilibrada, pero se tiende a tener más emociones negativas, probablemente representadas en los libros que presentan temáticas más oscuras y relacionadas con la muerte que a su vez resultan ser los libros más largos de la saga.
 
 ### Comparación entre libros de la saga
 
 ![](imagenes/comparacionemocionesbook.png)
 
-La visualización revela que un fuerte enfoque en confianza (trust) y tristeza (sadness) dominan la narrativa. Aunque hay momentos de alegría y sorpresa, son opacados por las emociones más intensas que definen el tono emocional de Harry Potter.
-
+* La visualización revela que un fuerte enfoque en confianza (trust) y tristeza (sadness) dominan la narrativa. Aunque hay momentos de alegría y sorpresa, son opacados por las emociones más intensas que definen el tono emocional de Harry Potter.
 
 
 ### Análisis de la polaridad. Comparación entre libros:
@@ -479,7 +485,10 @@ La visualización revela que un fuerte enfoque en confianza (trust) y tristeza (
 * "Libro  8" representa la saga completa.
 
 En este gráfico se puede ver de manera más explícita la diferencia entre de polaridades entre los diferentes libros.
-Los 3 primeros libros son los más positivos de la saga, la cual gradualmente se van haciendo más oscura. En el 4.º la diferencia es mucha, esto tiene sentido al considerar que en este libro Voldemort vuelve y se presenta la primera muerte significativa que Harry presencia, la muerte de Cedric Diggory.
+
+Los 3 primeros libros son los más positivos de la saga, la cual gradualmente se van haciendo más oscura.
+
+En el 4.º la diferencia es mucha, esto tiene sentido al considerar que en este libro Voldemort vuelve y se presenta la primera muerte significativa que Harry presencia, la muerte de Cedric Diggory.
 
 
 ```
@@ -499,9 +508,12 @@ ggplot(polaridad_libros, aes(x = Libro, y = Frecuencia, fill = Polaridad)) +
 ```
 
 ![](imagenes/polaridademocionallibro.png)
-* El "libro 8" representa la saga completa
 
-El 5.º libro se presenta como uno mucho más positivo, no hay muertes y Harry toma más autonomía y liderazgo al crear la Orden del Fénix. El 6.º libro vuelve a tener una polaridad más negativa con respecto a su antecesor, aunque no tanto como el 4.º. Este libro presenta temáticas más profundas relacionadas con el pasado de Voldemort, sus recuerdos, los Horrocruxes y la muerte de Dumbledore.
+
+El 5.º libro se presenta como uno mucho más positivo, no hay muertes y Harry toma más autonomía y liderazgo al crear la Orden del Fénix.
+
+El 6.º libro vuelve a tener una polaridad más negativa con respecto a su antecesor, aunque no tanto como el 4.º. Este libro presenta temáticas más profundas relacionadas con el pasado de Voldemort, sus recuerdos, los Horrocruxes y la muerte de Dumbledore.
+
 Finalmente, el 7to libro es el libro con la polaridad más negativa de la saga, esto debido a que se presentan situaciones relacionadas a la muerte, el sacrificio de parte de Harry, la destrucción de los horrocruxes, y finalmente la ballata de Hogwarts la cual presenta la mayor cantidad de muertes.
 
 La consistencia de estas emociones refleja un patrón recurrente en la saga de Harry Potter, donde momentos oscuros se equilibran con esperanza y momentos alegres.
@@ -532,6 +544,18 @@ La consistencia de estas emociones refleja un patrón recurrente en la saga de H
 
 ### Comparación entre personajes principales
 
+```
+  # Crear gráfico de barras apiladas con los datos filtrados
+  ggplot(emociones_filtradas, aes(x = Var2, y = Porcentaje, fill = Emocion)) +
+    geom_bar(stat = "identity", color = "white") +
+    scale_fill_brewer(palette = "Set3") + 
+    labs(title = "Distribución de emociones por libro",
+         x = "Libro",
+         y = "Porcentaje (%)",
+         fill = "Emoción") +
+    theme_minimal() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
+```
 
 ![](imagenes/comparacionemocionesper.png)
 
