@@ -26,7 +26,7 @@ extracción de temas, análisis de redes semánticas y más.
 
 ### Herramientas utilizadas:
 
-### R para la minería de texto, análisis y visualización.
+### R: minería de texto, análisis y visualización.
 ### Librerías principales: 
 
 * library(ggplot2) 
