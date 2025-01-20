@@ -11,6 +11,23 @@ y análisis de sentimientos. El objetivo principal es extraer patrones, identifi
 A través del uso de R y librerías especializadas, este análisis se desarrolla utilizando métodos de preprocesamiento de texto, 
 extracción de temas, análisis de redes semánticas y más.
 
+### Herramientas:
+
+* R para la minería de texto, análisis y visualización.
+Librerías principales: 
+
+library(ggplot2) 
+library(reshape2)   
+library(tidyr)    
+ibrary(wordcloud) 
+library(igraph) 
+
+* Análisis avanzado:
+
+library(topicmodels) 
+library(syuzhet) 
+
+ 
 ### Objetivos del Proyecto
 
 * Procesar y limpiar los textos de los libros para obtener datos estructurados listos para su análisis.
@@ -90,22 +107,7 @@ print(conteo_palabras)
 
 **C**ited/Citación: -
 
-### Herramientas:
 
-* R para la minería de texto, análisis y visualización.
-Librerías principales: 
-
-library(ggplot2) 
-library(reshape2)   
-library(tidyr)    
-ibrary(wordcloud) 
-library(igraph) 
-
-* Análisis avanzado:
-
-library(topicmodels) 
-library(syuzhet) 
- 
 
 # 3. Procesar
 
