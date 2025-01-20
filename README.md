@@ -11,21 +11,7 @@ y análisis de sentimientos. El objetivo principal es extraer patrones, identifi
 A través del uso de R y librerías especializadas, este análisis se desarrolla utilizando métodos de preprocesamiento de texto, 
 extracción de temas, análisis de redes semánticas y más.
 
-### Herramientas:
 
-* R para la minería de texto, análisis y visualización.
-Librerías principales: 
-
-library(ggplot2) 
-library(reshape2)   
-library(tidyr)    
-ibrary(wordcloud) 
-library(igraph) 
-
-* Análisis avanzado:
-
-library(topicmodels) 
-library(syuzhet) 
 
  
 ### Objetivos del Proyecto
@@ -36,6 +22,24 @@ library(syuzhet)
 * Implementar análisis de sentimientos, modelado de tópicos y estudio de frecuencias.
 * Analizar la distribución de emociones entre los personajes principales y compararlas a lo largo de los diferentes libros de la saga.
 * Descubrir patrones emocionales que ofrezcan un entendimiento más profundo de los textos.
+
+
+### Herramientas utilizadas:
+
+### R para la minería de texto, análisis y visualización.
+Librerías principales: 
+
+* library(ggplot2) 
+* library(reshape2)   
+* library(tidyr)    
+* library(wordcloud) 
+* library(igraph) 
+
+### Análisis avanzado:
+
+* library(topicmodels) 
+* library(syuzhet)
+
 
 
 ## Tabla de Contenidos:
